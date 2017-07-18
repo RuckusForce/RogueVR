@@ -66,7 +66,7 @@ public class PlatformGenerator : MonoBehaviour {
         //distanceBetween = platformWidth*3f;
         distanceBetween = 0f;
 
-		poolCount = 35;
+		poolCount = 70;
 		for (int i = 0; i < poolCount; i++) {
 			platformPool.Add(Instantiate(thePlatform, transform.position, transform.rotation));
 			platformPool[i].gameObject.SetActive(false);
