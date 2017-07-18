@@ -1,0 +1,29 @@
+Start adding more stuff on Project Scifi
+---------------------------------------------
+Completed:
+*Player Controls
+*Sprint
+*Change levels
+*Shooting 
+*Bullet prefab
+*Health bar UI
+*Energy UI
+*Shield UI
+*Items UI
+---------------------------------------------
+Need to do:
+*Enemy Ai, simple or sophisticated
+*Power up abilities
+*Trigger Event
+*Healing functions
+*Armor functions
+*Speed Boost
+*On hit kill(one punch man powerup)
+*God mode
+---------------------------------------------
+Make it more sophisticated but functional 
+*Change levels
+*Player Controls
+--------------------------------------------
+Added:
+Bullet physics script

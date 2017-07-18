@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: 8fac44e3c2389a647a9f8b218c85201b
+timeCreated: 1498025700
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rogue_ slices_0
+    21300002: rogue_ slices_1
+    21300004: rogue_ slices_2
+    21300006: rogue_ slices_3
+    21300008: rogue_ slices_4
+    21300010: rogue_ slices_5
+    21300012: rogue_ slices_6
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 700
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rogue_ slices_0
+      rect:
+        serializedVersion: 2
+        x: 144.05002
+        y: 70.78345
+        width: 322.375
+        height: 1390.8268
+      alignment: 9
+      pivot: {x: 0.5008143, y: 0.49842054}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_ slices_2
+      rect:
+        serializedVersion: 2
+        x: 739.307
+        y: 70.92149
+        width: 322.51965
+        height: 1384.449
+      alignment: 9
+      pivot: {x: 0.49514192, y: 0.500978}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_ slices_4
+      rect:
+        serializedVersion: 2
+        x: 1372.5082
+        y: 731.69696
+        width: 159.88184
+        height: 456.45673
+      alignment: 9
+      pivot: {x: 0.4846826, y: 0.49687743}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_ slices_5
+      rect:
+        serializedVersion: 2
+        x: 2347.609
+        y: 68.310936
+        width: 207.71655
+        height: 851.88983
+      alignment: 9
+      pivot: {x: 0.47368085, y: 0.4996996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_ slices_6
+      rect:
+        serializedVersion: 2
+        x: 2741.108
+        y: 726.494
+        width: 169.44897
+        height: 478.77954
+      alignment: 9
+      pivot: {x: 0.5009891, y: 0.49502113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 98314715974601
+  assetBundleName: 
+  assetBundleVariant: 

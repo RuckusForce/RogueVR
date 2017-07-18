@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: EndJump
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: Bones/BTorso
+    localPosition: {x: -0.021746386, y: 0.13, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.6462267, w: 0.76314557}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/BTorso/BHead
+    localPosition: {x: 0.6585185, y: 0, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.1749982, w: 0.9845688}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/BTorso/BLeftArm
+    localPosition: {x: 0.5486468, y: 0.034643292, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.23659082, w: -0.9716094}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/BTorso/BLeftArm/BLeftForearm
+    localPosition: {x: 0.4318383, y: 0.000000029802322, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.3592558, w: 0.9332392}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/BTorso/BRightArm
+    localPosition: {x: 0.5486468, y: 0.03464329, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.3784655, w: 0.92561543}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/BTorso/BRightArm/BRightForearm
+    localPosition: {x: 0.44344777, y: -0.00000011920929, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.25539142, w: 0.96683776}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/BTorso/BLeftLeg
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.96271104, w: 0.27053195}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/BTorso/BLeftLeg/BLeftShin
+    localPosition: {x: 0.45768297, y: 0.000000059604645, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.27295554, w: 0.96202666}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/BTorso/BLeftLeg/BLeftShin/BLeftFoot
+    localPosition: {x: 0.55245286, y: 0.000000059604645, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.062877774, w: 0.99802125}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/BTorso/BRightLeg
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.98591566, w: -0.16724347}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/BTorso/BRightLeg/BRightShin
+    localPosition: {x: 0.544596, y: -0.000000048428774, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.32911113, w: 0.94429123}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/BTorso/BRightLeg/BRightShin/BRightFoot
+    localPosition: {x: 0.45000058, y: -0.000000033556717, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.3421009, w: 0.9396633}
+    localScale: {x: 1, y: 1, z: 1}

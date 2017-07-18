@@ -1,0 +1,35 @@
+[
+{
+	"id": 0,
+	"title":"Handgun 1",
+	"value": 100,
+	"stats":{
+		"power": 0
+	},
+	"description": "Handgun",
+	"rarity": 1,
+	"slug": "LT Handgun 1"
+},
+{
+	"id": 1,
+	"title":"Submachinegun 1",
+	"value": 100,
+	"stats":{
+		"power": 0
+	},
+	"description": "Submachinegun",
+	"rarity": 1,
+	"slug": "LT Submachinegun 1"
+},
+{
+	"id": 2,
+	"title":"Rifle 1",
+	"value": 100,
+	"stats":{
+		"power": 0
+	},
+	"description": "Rifle",
+	"rarity": 1,
+	"slug": "LT Rifle 1"
+}
+]

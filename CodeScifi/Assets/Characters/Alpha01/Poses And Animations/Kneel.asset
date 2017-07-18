@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: Kneel
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: Bones/TorsoB
+    localPosition: {x: -0.19276285, y: -0.7607434, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.65105206, w: 0.7590331}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/TorsoB/HeadB
+    localPosition: {x: 1.19, y: 0.000000029802322, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.41758093, w: 0.9086397}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/TorsoB/RLegB
+    localPosition: {x: -0.16697942, y: -0.124662094, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.962593, w: -0.2709516}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/TorsoB/RLegB/RShinB
+    localPosition: {x: 1.0262939, y: 0.00000011920929, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.9074701, w: 0.4201166}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/TorsoB/RLegB/RShinB/RFootB
+    localPosition: {x: 1.2600003, y: 0.00000020861626, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.90173763, w: 0.43228376}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/TorsoB/LLegB
+    localPosition: {x: -0.15964594, y: -0.13448453, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.53978705, w: 0.8418016}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/TorsoB/LLegB/LShinB
+    localPosition: {x: 1.1658857, y: -0.00000011920929, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.8331377, w: 0.55306566}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/TorsoB/LLegB/LShinB/LFootB
+    localPosition: {x: 1.3, y: 0.00000017881393, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.7418379, w: 0.67057925}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/TorsoB/LArmB
+    localPosition: {x: 1.1597712, y: 0.08570981, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.93326205, w: 0.35919628}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/TorsoB/LArmB/LForearmB
+    localPosition: {x: 0.9000002, y: 0, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.71206635, w: 0.70211226}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/TorsoB/RArmB
+    localPosition: {x: 1.1498141, y: 0.017087758, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.6735331, w: 0.7391571}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/TorsoB/RArmB/RForearmB
+    localPosition: {x: 0.78000003, y: 0.000000074505806, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.06385432, w: 0.99795926}
+    localScale: {x: 1, y: 1, z: 1}

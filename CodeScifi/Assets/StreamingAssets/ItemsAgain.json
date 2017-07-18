@@ -1,0 +1,47 @@
+[
+{
+	"id": 0,
+	"title":"Small Medic Pack",
+	"value": 100,
+	"stats":{
+		"power": 0,
+		"defence": 0,
+		"vitality": 25
+	},
+	"description": "Gloves made from steel. Yeah.",
+	"stackable": true,
+	"rarity": 2,
+	"slug": "genericItem_color_089.png",
+	"effect": "Heal"
+},
+{
+	"id": 1,
+	"title":"Medium Medic Pack",
+	"value": 250,
+	"stats":{
+		"power": 0,
+		"defence": 0,
+		"vitality": 50
+	},
+	"description": "It's a stick that's pretty great.",
+	"stackable": true,
+	"rarity": 2,
+	"slug": "genericItem_color_099.png",
+	"effect": "Heal"
+},
+{
+	"id": 2,
+	"title":"Large Medic Pack",
+	"value": 600,
+	"stats":{
+		"power": 0,
+		"defence": 0,
+		"vitality": 100
+	},
+	"description": "Click it.",
+	"stackable": true,
+	"rarity": 2,
+	"slug": "genericItem_color_102.png",
+	"effect": "Heal"
+}
+]

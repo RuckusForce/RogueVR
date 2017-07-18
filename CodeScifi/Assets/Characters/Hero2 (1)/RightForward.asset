@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: RightForward
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: Bones/Torso
+    localPosition: {x: 0.104389176, y: -0.88412577, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.49632874, w: 0.8681347}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/Head
+    localPosition: {x: 0.43999994, y: -0.000000029802322, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.2429211, w: 0.9700461}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/LeftLeg
+    localPosition: {x: -0.07345949, y: 0.056278225, z: 0.2}
+    localRotation: {x: 0, y: 0, z: 0.9921305, w: 0.12520804}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/LeftLeg/LeftShin
+    localPosition: {x: 0.47309673, y: -0.0000000037252903, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.18501417, w: 0.9827359}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/LeftLeg/LeftShin/LeftJoint
+    localPosition: {x: 0.2800003, y: 0.00000010430813, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.8792118, w: 0.47643113}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/LeftLeg/LeftShin/LeftJoint/LeftFoot
+    localPosition: {x: 0.17999993, y: 0.00000013411045, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.9496164, w: 0.31341475}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/RightLeg
+    localPosition: {x: -0.0743444, y: 0.05740931, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.61518604, w: -0.788382}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/RightLeg/RightShin
+    localPosition: {x: 0.48252806, y: 0.000000055879354, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.46511677, w: 0.8852494}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/RightLeg/RightShin/RightJoint
+    localPosition: {x: 0.26097006, y: 0.00000004353933, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.8628583, w: 0.5054461}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/RightLeg/RightShin/RightJoint/RightFoot
+    localPosition: {x: 0.18000008, y: 0.000000029802322, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.9215156, w: 0.38834152}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/RightArm
+    localPosition: {x: 0.36870974, y: 0.041256994, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.9257924, w: -0.37803245}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/RightArm/RightForearm
+    localPosition: {x: 0.30000016, y: -0.000000014901161, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.25272515, w: 0.9675382}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/LeftArm
+    localPosition: {x: 0.37242913, y: 0.040655404, z: 0.2}
+    localRotation: {x: 0, y: 0, z: 0.8197209, w: -0.5727631}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/LeftArm/LeftForearm
+    localPosition: {x: 0.30000016, y: -0.000000014901161, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.49214733, w: 0.870512}
+    localScale: {x: 1, y: 1, z: 1}

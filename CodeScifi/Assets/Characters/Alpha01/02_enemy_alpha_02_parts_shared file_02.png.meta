@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: 4f95e6a78ad77024d8db58371514055c
+timeCreated: 1490332991
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 02_enemy_alpha_02_parts_shared file_02_0
+    21300002: 02_enemy_alpha_02_parts_shared file_02_1
+    21300004: 02_enemy_alpha_02_parts_shared file_02_2
+    21300006: 02_enemy_alpha_02_parts_shared file_02_3
+    21300008: 02_enemy_alpha_02_parts_shared file_02_4
+    21300010: 02_enemy_alpha_02_parts_shared file_02_5
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 400
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 02_enemy_alpha_02_parts_shared file_02_0
+      rect:
+        serializedVersion: 2
+        x: 203.99998
+        y: 182.96135
+        width: 1043.8086
+        height: 1595.6875
+      alignment: 9
+      pivot: {x: 0.49865457, y: 0.49918213}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 02_enemy_alpha_02_parts_shared file_02_1
+      rect:
+        serializedVersion: 2
+        x: 1767.3794
+        y: 1342.4106
+        width: 600.02734
+        height: 481.51758
+      alignment: 9
+      pivot: {x: 0.5018444, y: 0.49134082}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 02_enemy_alpha_02_parts_shared file_02_2
+      rect:
+        serializedVersion: 2
+        x: 1757.708
+        y: 156.78645
+        width: 461.3457
+        height: 1053.8945
+      alignment: 9
+      pivot: {x: 0.49917474, y: 0.49930382}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 02_enemy_alpha_02_parts_shared file_02_3
+      rect:
+        serializedVersion: 2
+        x: 2435.9136
+        y: 180.70334
+        width: 579.8557
+        height: 975.7285
+      alignment: 9
+      pivot: {x: 0.4985489, y: 0.4983934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 02_enemy_alpha_02_parts_shared file_02_4
+      rect:
+        serializedVersion: 2
+        x: 3321.1736
+        y: 374.66333
+        width: 675.6719
+        height: 791.66016
+      alignment: 9
+      pivot: {x: 0.49702555, y: 0.50253457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 02_enemy_alpha_02_parts_shared file_02_5
+      rect:
+        serializedVersion: 2
+        x: 4256.9004
+        y: 195.30418
+        width: 663.06445
+        height: 975.7285
+      alignment: 9
+      pivot: {x: 0.49557716, y: 0.4988024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 98195847643136
+  assetBundleName: 
+  assetBundleVariant: 
