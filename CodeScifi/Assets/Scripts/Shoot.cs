@@ -30,7 +30,7 @@ public class Shoot : MonoBehaviour
 
     private void FireInput()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire)
+        if (Input.GetKey(KeyCode.Space) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             Instantiate(bullet, transform.position + (transform.right * 1), transform.rotation);
