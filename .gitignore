@@ -12,6 +12,9 @@
 sysinfo.txt
 # Unity3D generated meta files
 *.pidb.meta
+!*.dll
+!*.obj
+CodeScifi/Assets/OVR/Plugins/1.16.0/Win64/OVRPlugin.dll
 
 ###
 # VS/MD solution and project files
