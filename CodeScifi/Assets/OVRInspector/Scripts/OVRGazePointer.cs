@@ -106,6 +106,8 @@ public class OVRGazePointer : MonoBehaviour {
             
     }
 
+    public GameObject targetCanvas;
+
 
     /// <summary>
     /// Used to determine alpha level of gaze cursor. Could also be used to determine cursor size, for example, as the cursor fades out.
@@ -169,12 +171,27 @@ public class OVRGazePointer : MonoBehaviour {
 
         trailFollower = transform.Find("TrailFollower");
         progressIndicator = transform.GetComponent<OVRProgressIndicator>();
+
+
     }
     
     void Update () 
     {
         // Move the gaze cursor to keep it in the middle of the view
         transform.position = rayTransform.position + rayTransform.forward * depth;
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);//keep to the same z-depth as the platforms
+        //GAA - This is where we'll have to modify the depth
+        //I think instead of rayTransform.forward * depth, we'll have to register a hit from the rayTransform source (which should be attached to the camera, facing the character, and moving parallel to the character)
+        //And for RayCast.OnHit(), return the new coordinates
+        //Then change this transform's position, which should be independent of the camera, to it.
+
+        //moving the transform.position modification to fixedupdate for raycast
+
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //RaycastHit hit;
+
+        //if (Physics.Raycast(ray, out hit, 100))
+        //    Debug.DrawLine(ray.origin, hit.point);
 
         // Should we show or hide the gaze cursor?
         if (visibilityStrength == 0 && !hidden)
@@ -186,6 +203,27 @@ public class OVRGazePointer : MonoBehaviour {
             Show();
         }
     }
+
+    /////<summary>
+    ///// Set pointer position via RayCast hit
+    ///// </summary>
+    //private void FixedUpdate()
+    //{
+    //    RaycastHit hit;
+    //    Vector3 rayRotation = rayTransform.rotation * Vector3.forward;
+
+    //    Debug.DrawRay(rayTransform.position, rayRotation, Color.green);
+
+    //    if (Physics.Raycast(rayTransform.position, rayRotation, out hit))
+    //        print("Found an object - distance: " + hit.ToString());
+
+    //    if (Physics2D.Raycast(rayTransform.position, rayRotation)) {
+    //        print("2D Raycast triggered");
+    //    }
+
+    //    //pointer.position = someCamera.WorldToScreenPoint(rayTransform.position);
+    //    //should this code be in this class OVRGazePointer?
+    //}
 
     /// <summary>
     /// Set position and orientation of pointer
@@ -200,7 +238,7 @@ public class OVRGazePointer : MonoBehaviour {
         // the direction of movement so that trail effects etc are easier
         Quaternion newRot = transform.rotation;
         newRot.SetLookRotation(normal, rayTransform.up);
-        transform.rotation = newRot;
+        //transform.rotation = newRot;//GAA: we don't want the reticle to rotate
 
         // record depth so that distance doesn't pop when pointer leaves an object
         depth = (rayTransform.position - pos).magnitude;
