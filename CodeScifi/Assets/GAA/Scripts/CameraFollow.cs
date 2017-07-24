@@ -15,12 +15,12 @@ public class CameraFollow : MonoBehaviour {
 	float offsetY;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		target = GameObject.Find("Hero2 (1)").transform;
 		cameraContainer = transform.parent;
 		smoothTimeX = 0f;
 		smoothTimeY = .2f;
-		offsetX = -12f;
+		offsetX = -15f;
 		offsetY = 6f;
 		cameraContainer.position = new Vector3(cameraContainer.position.x, cameraContainer.position.y + offsetY, cameraContainer.position.z);
 	}
@@ -29,7 +29,5 @@ public class CameraFollow : MonoBehaviour {
 	void FixedUpdate () {
         posX = Mathf.SmoothDamp(cameraContainer.position.x, target.transform.position.x, ref velocity.x, smoothTimeX);
 		cameraContainer.position = new Vector3(posX - offsetX, cameraContainer.position.y, cameraContainer.position.z);
-        //
-		//
     }
 }

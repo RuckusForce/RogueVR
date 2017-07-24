@@ -106,7 +106,7 @@ public class OVRGazePointer : MonoBehaviour {
             
     }
 
-    public GameObject targetCanvas;
+	public float sensitivity = .5f;
 
 
     /// <summary>
@@ -177,21 +177,10 @@ public class OVRGazePointer : MonoBehaviour {
     
     void Update () 
     {
-        // Move the gaze cursor to keep it in the middle of the view
-        transform.position = rayTransform.position + rayTransform.forward * depth;
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);//keep to the same z-depth as the platforms
-        //GAA - This is where we'll have to modify the depth
-        //I think instead of rayTransform.forward * depth, we'll have to register a hit from the rayTransform source (which should be attached to the camera, facing the character, and moving parallel to the character)
-        //And for RayCast.OnHit(), return the new coordinates
-        //Then change this transform's position, which should be independent of the camera, to it.
-
-        //moving the transform.position modification to fixedupdate for raycast
-
-        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //RaycastHit hit;
-
-        //if (Physics.Raycast(ray, out hit, 100))
-        //    Debug.DrawLine(ray.origin, hit.point);
+		// Move the gaze cursor to keep it in the middle of the view
+		transform.position = rayTransform.position + rayTransform.forward * depth;
+		//transform.position = new Vector3(transform.position.x*sensitivity, transform.position.y* sensitivity, 0f);//keep to the same z-depth as the platforms
+		transform.localPosition = new Vector3(transform.localPosition.x * sensitivity, transform.localPosition.y * sensitivity, 0f);
 
         // Should we show or hide the gaze cursor?
         if (visibilityStrength == 0 && !hidden)

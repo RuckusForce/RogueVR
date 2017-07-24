@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInputScript : MonoBehaviour {
 
@@ -29,6 +30,8 @@ public class PlayerInputScript : MonoBehaviour {
 	public float levelNine;
 
 	AudioSource jumpAudioSource;
+
+	OVRTouchpad.TouchArgs touchArgs;
 
 	void Awake() {
 		OVRTouchpad.Create();
@@ -98,7 +101,12 @@ public class PlayerInputScript : MonoBehaviour {
 
 		#endregion
 
-		
+		#region [DEBUG] Restart with Esc Button
+		if (Input.GetKey(KeyCode.Escape)) {
+			SceneManager.LoadScene("RogueVR1");
+			Time.timeScale = 1f;
+		}
+		#endregion
 
 		#region Sliding Controls (Disabled)		
 		//if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -245,52 +253,36 @@ public class PlayerInputScript : MonoBehaviour {
 
 	void HandleTouchHandler(object sender, System.EventArgs e)
 	{
-		OVRTouchpad.TouchArgs touchArgs = (OVRTouchpad.TouchArgs)e;
-		if (touchArgs.TouchType == OVRTouchpad.TouchEvent.SingleTap)
+		if (rb != null)
 		{
-			//TODO: Insert code here to handle a single tap.  Note that there are other TouchTypes you can check for like directional swipes, but double tap is not currently implemented I believe.
-			//rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-			#region Jump Controls
-			//if (Input.GetKeyDown(KeyCode.Space))
-			//{
+			touchArgs = (OVRTouchpad.TouchArgs)e;
+			if (touchArgs.TouchType == OVRTouchpad.TouchEvent.SingleTap)
+			{
+				//TODO: Insert code here to handle a single tap.  Note that there are other TouchTypes you can check for like directional swipes, but double tap is not currently implemented I believe.
+				//rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+				#region Jump Controls
 				if (!dead)
 				{
 					if (attributes.grounded)
 					{
 						maxJumpCount = 2;//double jump capacity
-						if (!anim.GetBool("Sliding"))
-						{
-							maxJumpCount--;
-							rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
-							jumpAudioSource.Play();
-						}
+						maxJumpCount--;
+						rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+						jumpAudioSource.Play();
 					}
 					else if (!attributes.grounded && maxJumpCount > 0)
 					{
-						if (!anim.GetBool("Sliding"))
-						{
-							maxJumpCount--;
-							rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
-							jumpAudioSource.Play();
-						}
+						maxJumpCount--;
+						rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+						jumpAudioSource.Play();
 					}
-
-					//if (attributes.grounded && !anim.GetBool("Sliding") && !anim.GetBool("Falling"))//maybe turn sliding into a bool instead of a trigger?
-					//{
-					//	//jump
-					//	Debug.Log("Jump");
-					//	maxJumpCount = 2;
-
-					//	rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
-					//	//anim.SetTrigger("Jumping");
-					//	//jumpVelocity = 6f;
-					//} 
-					//else {
-					//	//don't jump
-					//}
 				}
-			//}
-			#endregion
+				#endregion
+			}
 		}
 	}
+
+	//private void OnDestroy() {
+
+	//}
 }
