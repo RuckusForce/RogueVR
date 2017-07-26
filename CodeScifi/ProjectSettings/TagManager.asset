@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Obstacle
   - Background
+  - dontmove
+  - listlast
   layers:
   - Default
   - TransparentFX
