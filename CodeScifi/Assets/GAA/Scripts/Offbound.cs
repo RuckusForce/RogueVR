@@ -5,10 +5,19 @@ using UnityEngine;
 public class Offbound : MonoBehaviour
 {
 	RetryGame rG;
+	Vector3 position;
 
 	void Awake()
     {
 		rG = GameObject.Find("GameController").GetComponent<RetryGame>();
+		position = transform.position;
+	}
+
+	void Update() {
+		transform.position = new Vector3(
+			transform.position.x,
+			Mathf.Clamp(transform.position.y, -10f, -10f),
+			transform.position.z);
 	}
 
 	private void OnCollisionEnter2D(Collision2D col)

@@ -38,12 +38,12 @@ namespace Anima2D
 	}
 
 	
-	public class PreviewGameObjectPool : ObjectPool< GameObject >
+	public class PreviewGameObjectPool : ObjectPoolAnima2D< GameObject >
 	{
 		public PreviewGameObjectPool(GameObject go) : base( new PreviewGameObjectInstantiateCreationPolicy(go) ) {}
 	}
 	
-	public class OnionLayerPool : ObjectPool< OnionLayer >
+	public class OnionLayerPool : ObjectPoolAnima2D< OnionLayer >
 	{
 		public OnionLayerPool() : base( new OnionLayerCreationPolicy() ) {}
 	}

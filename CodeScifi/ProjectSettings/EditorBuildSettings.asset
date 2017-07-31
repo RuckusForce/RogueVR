@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ScifiDemo2.unity
     guid: b78adb6a5b86a1d46ada74ae35ca209b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RogueVR1.unity
     guid: 414c1176546dda34c96a99657e063ef8
+  - enabled: 1
+    path: Assets/Scenes/RogueVR2.unity
+    guid: 22cf89672507d464d8978a19b4e157f1

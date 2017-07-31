@@ -31,11 +31,7 @@ public class PlayerInputScript : MonoBehaviour {
 
 	AudioSource jumpAudioSource;
 
-	OVRTouchpad.TouchArgs touchArgs;
-
 	void Awake() {
-		OVRTouchpad.Create();
-		OVRTouchpad.TouchHandler += HandleTouchHandler;
 
 		parent = transform.parent;
 		attributes = parent.GetComponentInChildren<PlayerAttributesScript>();
@@ -101,9 +97,31 @@ public class PlayerInputScript : MonoBehaviour {
 
 		#endregion
 
+		#region Jump Controls [Deleted OVR SDK. Need to re-establish controls for Cardboard SDK instead.]
+		if (Input.GetMouseButtonDown(0))
+		{
+			if (!dead)
+			{
+				if (attributes.grounded)
+				{
+					maxJumpCount = 2;//double jump capacity
+					maxJumpCount--;
+					rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+					jumpAudioSource.Play();
+				}
+				else if (!attributes.grounded && maxJumpCount > 0)
+				{
+					maxJumpCount--;
+					rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+					jumpAudioSource.Play();
+				}
+			}
+		}
+		#endregion
+
 		#region [DEBUG] Restart with Esc Button
 		if (Input.GetKey(KeyCode.Escape)) {
-			SceneManager.LoadScene("RogueVR1");
+			SceneManager.LoadScene("RogueVR2");
 			Time.timeScale = 1f;
 		}
 		#endregion
@@ -210,8 +228,6 @@ public class PlayerInputScript : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-
-
 		#region Automatic Horizonal Movement (rb.AddForce) 
 		//if (!dead)
 		//{
@@ -250,39 +266,4 @@ public class PlayerInputScript : MonoBehaviour {
 		}
 		#endregion
 	}
-
-	void HandleTouchHandler(object sender, System.EventArgs e)
-	{
-		if (rb != null)
-		{
-			touchArgs = (OVRTouchpad.TouchArgs)e;
-			if (touchArgs.TouchType == OVRTouchpad.TouchEvent.SingleTap)
-			{
-				//TODO: Insert code here to handle a single tap.  Note that there are other TouchTypes you can check for like directional swipes, but double tap is not currently implemented I believe.
-				//rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-				#region Jump Controls
-				if (!dead)
-				{
-					if (attributes.grounded)
-					{
-						maxJumpCount = 2;//double jump capacity
-						maxJumpCount--;
-						rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
-						jumpAudioSource.Play();
-					}
-					else if (!attributes.grounded && maxJumpCount > 0)
-					{
-						maxJumpCount--;
-						rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
-						jumpAudioSource.Play();
-					}
-				}
-				#endregion
-			}
-		}
-	}
-
-	//private void OnDestroy() {
-
-	//}
 }

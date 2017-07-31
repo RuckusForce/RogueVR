@@ -43,11 +43,12 @@ public class PlayerAttributesScript : MonoBehaviour
 
     void Awake()
     {
-        healthBar = GameObject.Find("HealthBar").GetComponent<BarScript>();
-        energyBar = GameObject.Find("EnergyBar").GetComponent<BarScript>();
-        shieldBar = GameObject.Find("ShieldBar").GetComponent<BarScript>();
 
-        healthHUD = healthBar.GetComponentsInChildren<Image>()[2];
+		healthBar = GameObject.Find("HealthBar").GetComponent<BarScript>();
+		energyBar = GameObject.Find("EnergyBar").GetComponent<BarScript>();
+		shieldBar = GameObject.Find("ShieldBar").GetComponent<BarScript>();
+
+		healthHUD = healthBar.GetComponentsInChildren<Image>()[2];
         //0: health bar img, 1: mask img, 2: content img
 
         energyHUD = energyBar.GetComponentsInChildren<Image>()[2];

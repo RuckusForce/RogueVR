@@ -13,21 +13,22 @@ public class CameraFollow : MonoBehaviour {
 	float smoothTimeY;
 	float offsetX;
 	float offsetY;
+	float offsetZ;
 
 	// Use this for initialization
 	void Awake () {
 		target = GameObject.Find("Hero2 (1)").transform;
-		cameraContainer = transform.parent;
 		smoothTimeX = 0f;
 		smoothTimeY = .2f;
-		offsetX = -15f;
-		offsetY = 6f;
-		cameraContainer.position = new Vector3(cameraContainer.position.x, cameraContainer.position.y + offsetY, cameraContainer.position.z);
+		offsetX = -12f;
+		offsetY = 2f;
+		offsetZ = -13f;
+		transform.position = new Vector3(transform.position.x, transform.position.y + offsetY, transform.position.z + offsetZ);
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        posX = Mathf.SmoothDamp(cameraContainer.position.x, target.transform.position.x, ref velocity.x, smoothTimeX);
-		cameraContainer.position = new Vector3(posX - offsetX, cameraContainer.position.y, cameraContainer.position.z);
+        posX = Mathf.SmoothDamp(transform.position.x, target.transform.position.x, ref velocity.x, smoothTimeX);
+		transform.position = new Vector3(posX - offsetX, transform.position.y, transform.position.z);
     }
 }

@@ -147,11 +147,11 @@ public class PlatformGenerator : MonoBehaviour {
 				{
 					tempPlatform.SetActive(false);
 				}
-				else if (randomInt % 45 == 0) {
-					tempEnemy = returnInactiveEnemy();
-					tempEnemy.transform.position = transform.position;
-					tempEnemy.SetActive(true);
-				}
+				//else if (randomInt % 45 == 0) {
+				//	tempEnemy = returnInactiveEnemy();
+				//	tempEnemy.transform.position = transform.position;
+				//	tempEnemy.SetActive(true);
+				//}
 				#endregion
 
 				tempPlatform.transform.position = this.transform.position;
