@@ -21,8 +21,8 @@ public class PlatformDeactivator : MonoBehaviour {
 			sr = other.gameObject.GetComponent<SpriteRenderer>();
 			sr.sprite = spriteSheet[1];
 
-			pr = other.gameObject.GetComponent<PlatformRespriter>();
-			pr.ResetChildren();
+			//pr = other.gameObject.GetComponent<PlatformRespriter>();
+			//pr.ResetChildren();
 
 			other.gameObject.SetActive(false);
 		} else if (other.gameObject.CompareTag("Obstacle") 

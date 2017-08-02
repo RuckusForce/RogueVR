@@ -20,9 +20,9 @@ public class CameraFollow : MonoBehaviour {
 		target = GameObject.Find("Hero2 (1)").transform;
 		smoothTimeX = 0f;
 		smoothTimeY = .2f;
-		offsetX = -12f;
+		offsetX = -15f;
 		offsetY = 2f;
-		offsetZ = -13f;
+		offsetZ = -8f;
 		transform.position = new Vector3(transform.position.x, transform.position.y + offsetY, transform.position.z + offsetZ);
 	}
 	

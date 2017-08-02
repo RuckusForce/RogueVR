@@ -17,8 +17,8 @@ public class ShootAlternate : MonoBehaviour
     private void Awake()
     {
         rigidbodyRef = bullet.GetComponent<Rigidbody>();
-        //aimReticleScript = GameObject.Find("GazePointerRing").GetComponent<AimReticleScript>();
-    }
+		aimReticleScript = GameObject.Find("AimReticle").GetComponent<AimReticleScript>();
+	}
 	// Use this for initialization
 	void Start ()
     {
@@ -28,8 +28,8 @@ public class ShootAlternate : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        //FireInput();
-        //FireInputAuto();
+		//FireInput();
+		FireInputAuto();
 	}
 
     private void FireInput()

@@ -9,7 +9,7 @@ using UnityEngine;
 public class AimReticleScript : MonoBehaviour {
 
     GameObject targetObject;
-    List<GameObject> targetList;
+    public List<GameObject> targetList;
 
     void Awake()
     {

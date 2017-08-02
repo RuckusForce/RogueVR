@@ -21,7 +21,7 @@ public class TimeKeeperScript : MonoBehaviour {
 		platformGenerators = GameObject.Find("PlatformGenerators");
 		platformGeneratorArray = platformGenerators.GetComponentsInChildren<Transform>();
 		groundHeight = -4f;
-		levelTimeLimit = 20f;
+		levelTimeLimit = 40f;
 	}
 
 	// Update is called once per frame

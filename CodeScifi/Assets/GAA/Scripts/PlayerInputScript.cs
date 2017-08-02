@@ -260,8 +260,8 @@ public class PlayerInputScript : MonoBehaviour {
 
 			movement = new Vector2(automaticHorizontalMoveSpeed * moveSpeed, rb.velocity.y);
 			rb.velocity = movement;//velocity gets modified, but character doesn't move. May be due to Apply Root Animation of Animator modifying velocity at the same time.
-			//above now works. Animator needed to have Apply Root Motion, Normal Update Mode, Cull Completely Culling Mode
-			//also had a simulated dynamic rigidbody2d
+								   //above now works. Animator needed to have Apply Root Motion, Normal Update Mode, Cull Completely Culling Mode
+								   //also had a simulated dynamic rigidbody2d
 
 		}
 		#endregion
