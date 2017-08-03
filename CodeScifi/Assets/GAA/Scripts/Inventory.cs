@@ -72,10 +72,10 @@ public class Inventory : MonoBehaviour {
         }
 
         AddToActiveWeapons(0);//add weaponList[0], not itemdatabase.weaponDatabase[0]
-        ShowCurrentWeapon();
-    }
+		ShowCurrentWeapon();
+	}
 
-    public Weapon FetchWeapon(int id) {
+	public Weapon FetchWeapon(int id) {
         Weapon weapon = null;
 
         if (id == -1)

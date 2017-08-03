@@ -8,7 +8,7 @@ public class RaycastForward : MonoBehaviour {
 
 	void Awake() {
 		reticle = GameObject.Find("Reticle");
-		sensitivity = 1f;
+		sensitivity = 2f;
 	}
 
 	// Update is called once per frame
@@ -35,7 +35,7 @@ public class RaycastForward : MonoBehaviour {
 		hit2d = Physics2D.GetRayIntersection(cameraRay, 100f);
 		if (hit2d) {
 			//Debug.Log(hit2d.collider.gameObject + " is at " + hit2d.point);
-			reticle.transform.position = new Vector3(hit2d.point.x * sensitivity, hit2d.point.y * sensitivity, 0f);
+			reticle.transform.position = new Vector3(hit2d.point.x, hit2d.point.y*sensitivity, 0f);
 		}
 		#endregion
 
