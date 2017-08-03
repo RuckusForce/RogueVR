@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float speed = 30.0f;
+    private float speed = 45.0f;
     public string skipTag;
 
     // Use this for initialization
