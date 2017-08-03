@@ -22,7 +22,7 @@ public class CameraFollow : MonoBehaviour {
 		smoothTimeY = .2f;
 		offsetX = -15f;
 		offsetY = 2f;
-		offsetZ = -8f;
+		offsetZ = -20f;
 		transform.position = new Vector3(transform.position.x, transform.position.y + offsetY, transform.position.z + offsetZ);
 	}
 	

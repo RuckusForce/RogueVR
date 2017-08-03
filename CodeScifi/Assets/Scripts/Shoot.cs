@@ -30,11 +30,7 @@ public class Shoot : MonoBehaviour
 
     private void FireInput()
     {
-<<<<<<< HEAD
-        if (Input.GetKey(KeyCode.Space) && Time.time > nextFire)
-=======
         if (Input.GetKey(KeyCode.Mouse1) && Time.time > nextFire)
->>>>>>> Shinobi
         {
             nextFire = Time.time + fireRate;
             Instantiate(bullet, transform.position + (transform.right * 1), transform.rotation);
