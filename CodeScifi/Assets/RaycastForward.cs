@@ -32,10 +32,16 @@ public class RaycastForward : MonoBehaviour {
 		Ray cameraRay = new Ray(transform.position, transform.forward);
 		RaycastHit2D hit2d;
 
-		hit2d = Physics2D.GetRayIntersection(cameraRay, 100f);
+		hit2d = Physics2D.GetRayIntersection(cameraRay, 100f, 1 << LayerMask.NameToLayer("ReticleLayer"));
 		if (hit2d) {
-			//Debug.Log(hit2d.collider.gameObject + " is at " + hit2d.point);
-			reticle.transform.position = new Vector3(hit2d.point.x, hit2d.point.y*sensitivity, 0f);
+			Debug.Log("hit: " + hit2d.transform.gameObject.name);
+			//Debug.Log(hit2d.collider.gameObject.name + " is at " + hit2d.point + " w/ distance: " + hit2d.distance);
+			//reticle.transform.position = new Vector3(hit2d.point.x, hit2d.point.y*sensitivity, 0f);
+			reticle.transform.position = new Vector3(hit2d.point.x, hit2d.point.y * sensitivity, hit2d.distance*100f);//100f is related to the GetRayIntersection
+
+			if (hit2d.transform.gameObject.name == "Button") {//can't be collider based
+				hit2d.transform.gameObject.GetComponent<TestButton>().testButtonPress();
+			}	
 		}
 		#endregion
 
