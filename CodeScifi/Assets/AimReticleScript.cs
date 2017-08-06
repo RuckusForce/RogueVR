@@ -17,7 +17,7 @@ public class AimReticleScript : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name + " has entered.");
+        //Debug.Log(collision.gameObject.name + " has entered.");
         if (collision.gameObject.CompareTag("Enemy")) {
             targetObject = collision.gameObject;
             targetList.Add(targetObject);

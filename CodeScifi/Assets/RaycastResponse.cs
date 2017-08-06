@@ -49,11 +49,9 @@ public class RaycastResponse : MonoBehaviour {
 	/// </summary>
 	void PositionUpdate() {
 		raycastHitPos = raycastScript.returnHitPosition2D();
-
 		anotherReticle.transform.localPosition = AdjustForCameraFollow(raycastHitPos);
 		reticle.transform.localPosition = AdjustForCameraFollow(raycastHitPos)*sensitivity;
-		ped.position = AdjustForCameraFollow(raycastHitPos);
-		
+		ped.position = AdjustForCameraFollow(raycastHitPos);		
 	}
 
 	/// <summary>

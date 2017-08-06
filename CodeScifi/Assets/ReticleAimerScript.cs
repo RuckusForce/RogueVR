@@ -64,8 +64,5 @@ public class ReticleAimerScript : MonoBehaviour {
 		////finalRay = cam.ScreenPointToRay(screenPoint);
 		//#endregion
 	}
-
-		//GAA 01 Aug 2017: Keep working on VRReticle scene. Still need to figure out the proper proportion/conversion
-		//Maybe base it off of the canvas size (?)
-	}
+}
 

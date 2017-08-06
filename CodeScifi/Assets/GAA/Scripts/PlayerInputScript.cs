@@ -100,22 +100,29 @@ public class PlayerInputScript : MonoBehaviour {
 		#region Jump Controls [Deleted OVR SDK. Need to re-establish controls for Cardboard SDK instead.]
 		if (Input.GetMouseButtonDown(0))
 		{
-			if (!dead)
+			if (Time.timeScale == 1)
 			{
-				if (attributes.grounded)
+				if (!dead)
 				{
-					maxJumpCount = 2;//double jump capacity
-					maxJumpCount--;
-					rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
-					jumpAudioSource.Play();
-				}
-				else if (!attributes.grounded && maxJumpCount > 0)
-				{
-					maxJumpCount--;
-					rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
-					jumpAudioSource.Play();
+					if (attributes.grounded)
+					{
+						maxJumpCount = 2;//double jump capacity
+						maxJumpCount--;
+						rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+						jumpAudioSource.Play();
+					}
+					else if (!attributes.grounded && maxJumpCount > 0)
+					{
+						maxJumpCount--;
+						rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+						jumpAudioSource.Play();
+					}
 				}
 			}
+			else if (Time.timeScale == 0) {
+				Time.timeScale = 1f;
+			}
+			
 		}
 		#endregion
 
@@ -259,9 +266,10 @@ public class PlayerInputScript : MonoBehaviour {
 			#endregion
 
 			movement = new Vector2(automaticHorizontalMoveSpeed * moveSpeed, rb.velocity.y);
-			rb.velocity = movement;//velocity gets modified, but character doesn't move. May be due to Apply Root Animation of Animator modifying velocity at the same time.
-								   //above now works. Animator needed to have Apply Root Motion, Normal Update Mode, Cull Completely Culling Mode
-								   //also had a simulated dynamic rigidbody2d
+			rb.velocity = movement;
+			//velocity gets modified, but character doesn't move. May be due to Apply Root Animation of Animator modifying velocity at the same time.
+			//above now works. Animator needed to have Apply Root Motion, Normal Update Mode, Cull Completely Culling Mode
+			//also had a simulated dynamic rigidbody2d
 
 		}
 		#endregion
