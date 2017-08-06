@@ -137,17 +137,17 @@ public class PlatformRemesher : MonoBehaviour
 		//int rand = 2;
 		if (!(Time.timeSinceLevelLoad > timeKeeper.levelTimeLimit))
 		{
-			if (Time.timeSinceLevelLoad > pg.obstacleTimeInterval)
-			{
-				GameObject tempObstacle = pg.returnInactiveObstacle();
-				SpriteRenderer tempSr = tempObstacle.GetComponent<SpriteRenderer>();
-				tempObstacle.transform.position = new Vector3(
-				this.transform.position.x,
-				this.transform.position.y + (tempSr.sprite.rect.height / tempSr.sprite.pixelsPerUnit) / 2,
-				this.transform.position.z);
-				tempObstacle.SetActive(true);
-				pg.obstacleTimeInterval = pg.obstacleTimeInterval + Random.Range(3f, 6f);
-			}
+			//if (Time.timeSinceLevelLoad > pg.obstacleTimeInterval)
+			//{
+			//	GameObject tempObstacle = pg.returnInactiveObstacle();
+			//	SpriteRenderer tempSr = tempObstacle.GetComponent<SpriteRenderer>();
+			//	tempObstacle.transform.position = new Vector3(
+			//	this.transform.position.x,
+			//	this.transform.position.y + (tempSr.sprite.rect.height / tempSr.sprite.pixelsPerUnit) / 2,
+			//	this.transform.position.z);
+			//	tempObstacle.SetActive(true);
+			//	pg.obstacleTimeInterval = pg.obstacleTimeInterval + Random.Range(3f, 6f);
+			//}
 		}
 	}
 

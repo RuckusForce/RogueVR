@@ -75,7 +75,7 @@ public class PlatformGenerator : MonoBehaviour {
 		//minPlatformHeight = -3f;
 
 		theObstacle = Resources.Load("Prefabs/DummyObstacle") as GameObject;
-		obstaclePoolCount = 20;
+		obstaclePoolCount = 1;
 		for (int i = 0; i < obstaclePoolCount; i++) {
 			obstaclePool.Add(Instantiate(theObstacle));//can this be in the PlatformRespriter? No because we don't need multiple object pools
 			obstaclePool[i].gameObject.SetActive(false);

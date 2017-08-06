@@ -17,7 +17,7 @@ public class ShootAlternate : MonoBehaviour
     private void Awake()
     {
         rigidbodyRef = bullet.GetComponent<Rigidbody>();
-		aimReticleScript = GameObject.Find("AimReticle").GetComponent<AimReticleScript>();
+		aimReticleScript = GameObject.Find("GreenCircle").GetComponent<AimReticleScript>();
 	}
 	// Use this for initialization
 	void Start ()
