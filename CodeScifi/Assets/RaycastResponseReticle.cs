@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class RaycastResponse : MonoBehaviour {
+public class RaycastResponseReticle : MonoBehaviour {
 
 	[Tooltip("UI Raycaster")][SerializeField]
 	GraphicRaycaster gr;
@@ -34,7 +34,7 @@ public class RaycastResponse : MonoBehaviour {
 		anotherReticle = GameObject.Find("AnotherReticle");
 		reticle = GameObject.Find("Reticle");
 		cameraContainer = GameObject.Find("CameraContainer");
-		sensitivity = 1.2f;
+		sensitivity = 1f;
 
 	}
 	void Update() {

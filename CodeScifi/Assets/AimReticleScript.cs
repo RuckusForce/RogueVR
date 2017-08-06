@@ -17,13 +17,19 @@ public class AimReticleScript : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log(collision.gameObject.name + " has entered.");
-        if (collision.gameObject.CompareTag("Enemy")) {
+		Debug.Log(collision.gameObject.name + " has entered.");
+		if (collision.gameObject.CompareTag("Enemy")) {
             targetObject = collision.gameObject;
             targetList.Add(targetObject);
             //Destroy(collision.gameObject);
         }
-    }
+		else if (collision.gameObject.CompareTag("ReticleButtons"))
+		{
+			Debug.Log("ReticleButton has entered.");
+			collision.gameObject.GetComponent<TestButton>().testButtonPress();
+			
+		}
+	}
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy")) {

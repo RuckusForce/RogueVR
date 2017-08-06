@@ -45,10 +45,10 @@ public class RaycastForward : MonoBehaviour {
 			if (hitResults[i].collider.gameObject.CompareTag("ReticlePanel")) {
 				hit2d = hitResults[i];
 			}
-			else if (hitResults[i].collider.gameObject.CompareTag("ReticleButtons"))
-			{
-				hitResults[i].collider.gameObject.GetComponent<TestButton>().testButtonPress();
-			}
+			//else if (hitResults[i].collider.gameObject.CompareTag("ReticleButtons"))
+			//{
+			//	hitResults[i].collider.gameObject.GetComponent<TestButton>().testButtonPress();
+			//}
 		}
 		#endregion
 	}

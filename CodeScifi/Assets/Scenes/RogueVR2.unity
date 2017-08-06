@@ -582,7 +582,7 @@ Transform:
   m_Children:
   - {fileID: 904057311}
   m_Father: {fileID: 749962785}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &91477893
 Prefab:
@@ -1215,7 +1215,7 @@ Transform:
   - {fileID: 1994664030}
   - {fileID: 2069216525}
   m_Father: {fileID: 749962785}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &195470425
 Prefab:
@@ -3929,9 +3929,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1919753429}
   - {fileID: 87038523}
   - {fileID: 187493213}
-  - {fileID: 849640871}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6890,7 +6890,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 849640871}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1232072594
 Prefab:
@@ -7173,7 +7173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7331,6 +7331,7 @@ GameObject:
   - component: {fileID: 1385004786}
   - component: {fileID: 1385004789}
   - component: {fileID: 1385004790}
+  - component: {fileID: 1385004791}
   m_Layer: 8
   m_Name: Button
   m_TagString: ReticleButtons
@@ -7350,11 +7351,11 @@ RectTransform:
   m_Children:
   - {fileID: 1367954274}
   m_Father: {fileID: 849640871}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16.9, y: 9.5}
+  m_AnchoredPosition: {x: -15, y: 2.7}
   m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1385004786
@@ -7376,7 +7377,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 0.9632353, b: 0.9632353, a: 0}
     m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 1, g: 0.6827586, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -7476,8 +7477,28 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!50 &1385004791
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1385004784}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1430001595
 Prefab:
   m_ObjectHideFlags: 0
@@ -8223,6 +8244,7 @@ Transform:
   - {fileID: 1999071848}
   - {fileID: 455374471}
   - {fileID: 2137044697}
+  - {fileID: 849640871}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8344,7 +8366,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 749962785}
+    m_TransformParent: {fileID: 1693864840}
     m_Modifications:
     - target: {fileID: 224327257509632034, guid: e71bcf5009264284da4fff710979f58e,
         type: 2}
@@ -8359,7 +8381,7 @@ Prefab:
     - target: {fileID: 224327257509632034, guid: e71bcf5009264284da4fff710979f58e,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224327257509632034, guid: e71bcf5009264284da4fff710979f58e,
         type: 2}
@@ -8384,12 +8406,12 @@ Prefab:
     - target: {fileID: 224327257509632034, guid: e71bcf5009264284da4fff710979f58e,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224327257509632034, guid: e71bcf5009264284da4fff710979f58e,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 224327257509632034, guid: e71bcf5009264284da4fff710979f58e,
         type: 2}
@@ -8506,6 +8528,11 @@ Prefab:
     - target: {fileID: 1864787976477466, guid: e71bcf5009264284da4fff710979f58e, type: 2}
       propertyPath: m_TagString
       value: ReticlePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114819938674774100, guid: e71bcf5009264284da4fff710979f58e,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e71bcf5009264284da4fff710979f58e, type: 2}
@@ -8978,7 +9005,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 809a6bb87b7aec64a85e56f079a8b1bb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9543,11 +9570,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1919753428}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -20, z: 0}
+  m_LocalPosition: {x: 17.200012, y: -26.200012, z: 20}
   m_LocalScale: {x: 100, y: 1, z: 15}
   m_Children: []
-  m_Father: {fileID: 849640871}
-  m_RootOrder: 3
+  m_Father: {fileID: 749962785}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1919753430
 MonoBehaviour:
