@@ -135,7 +135,7 @@ public class PlatformRemesher : MonoBehaviour
 		isMidSection = true;
 		int rand = (int)Random.Range(0, 14);
 		//int rand = 2;
-		if (!(Time.timeSinceLevelLoad > timeKeeper.levelTimeLimit))
+		if (timeKeeper!=null && !(Time.timeSinceLevelLoad > timeKeeper.levelTimeLimit))
 		{
 			//if (Time.timeSinceLevelLoad > pg.obstacleTimeInterval)
 			//{
