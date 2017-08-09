@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position += transform.right * Time.deltaTime * speed;
+        //transform.position += transform.right * Time.deltaTime * speed;
     }
 
     private void OnCollisionEnter(Collision c)
