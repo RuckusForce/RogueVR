@@ -57,7 +57,7 @@ public class ShootAlternate : MonoBehaviour
             //maybe calculate the angle between bullet source and the target
             //then add force with that angle?
 
-            rb.AddForce(bulletDirection * 2000f);
+            rb.AddForce(bulletDirection * 200f);
         }
     }
 }
