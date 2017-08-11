@@ -11,11 +11,6 @@ public class TestButton : MonoBehaviour {
 	void Awake () {
 		btn = GetComponent<Button>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	public void testButtonPress() {
 		Debug.Log("Button pressed.");
