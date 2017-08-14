@@ -12,8 +12,8 @@ public class SenseReticleExit : MonoBehaviour {
 	}
 	
 	void OnTriggerExit2D(Collider2D other) {
-		Debug.Log(other.gameObject.name + "has exited.");
-		if (other.gameObject.name == "GreenCircle") {
+		//Debug.Log(other.gameObject.name + "has exited.");
+		if (other.gameObject.name == "CanvasCursor") {
 			Debug.Log("SenseReticleExit.cs: Pause");
 			pg.Pause();
 		}

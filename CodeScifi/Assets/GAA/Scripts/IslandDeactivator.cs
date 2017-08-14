@@ -13,7 +13,7 @@ public class IslandDeactivator : MonoBehaviour {
 			pr = other.gameObject.GetComponent<PlatformRemesher>();
 			if (!pr.hasLeft && !pr.hasRight)
 			{
-				Debug.Log(other.gameObject.name + " is reset.");
+				//Debug.Log(other.gameObject.name + " is reset.");
 				pr.ResetChildren();
 				other.gameObject.SetActive(false);
 			}

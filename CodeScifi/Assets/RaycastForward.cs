@@ -10,12 +10,16 @@ public class RaycastForward : MonoBehaviour {
 	RaycastHit2D hit2dButtons;
 	//RaycastHit2D[] hitResults;//Have to keep this array local
 	int layerMask;
+	Transform raymarker;
+
+	CameraFollow cameraFollow;
 
 	void Awake() {
 		reticle = GameObject.Find("Reticle");
 		sensitivity = 1f;
 		layerMask = 1 << LayerMask.NameToLayer("ReticleLayer");
-		
+		//raymarker = GameObject.Find("Raymarker").transform;
+		cameraFollow = GameObject.Find("CameraContainer").GetComponent<CameraFollow>();
 	}
 
 	void FixedUpdate () {
@@ -40,15 +44,14 @@ public class RaycastForward : MonoBehaviour {
 		Debug.DrawRay(transform.position, forward, Color.green);
 		Ray cameraRay = new Ray(transform.position, transform.forward);
 		RaycastHit2D[] hitResults = Physics2D.GetRayIntersectionAll(cameraRay, 100f, layerMask);
+		bool hitSomething = false;
 		for (int i = 0; i < hitResults.Length; i++) {
-			Debug.Log("Hit: " + hitResults[i].collider.gameObject.name);
-			if (hitResults[i].collider.gameObject.CompareTag("ReticlePanel")) {
-				hit2d = hitResults[i];
-			}
-			//else if (hitResults[i].collider.gameObject.CompareTag("ReticleButtons"))
-			//{
-			//	hitResults[i].collider.gameObject.GetComponent<TestButton>().testButtonPress();
-			//}
+			hit2d = hitResults[i];
+			hitSomething = true;
+		}
+		if (!hitSomething) {
+			hit2d = new RaycastHit2D();
+			hit2d.point = cameraFollow.ReturnCameraMovement2D();
 		}
 		#endregion
 	}

@@ -62,7 +62,7 @@ public class PlayerAttributesScript : MonoBehaviour
         //shield.Initialize(shieldBar);
 
         gameController = GameObject.Find("GameController");
-        retryGame = gameController.GetComponent<RetryGame>();
+        //retryGame = gameController.GetComponent<RetryGame>();
     }
 
     void Start() {
