@@ -20,11 +20,11 @@ public class WeaponPickup : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D c)
+    private void OnTriggerEnter2D(Collider2D colli)
     {
-        if (c.tag == "Player")
+        if (colli.gameObject.name == "Hero2 (1)") //DO NOT CHANGE IT 
         {
-            c.transform.Find("WeaponSlot").GetComponent<WeaponManager>().UpdateWeapon(weaponHere);
+            colli.transform.Find("WeaponSlot").GetComponent<WeaponManager>().UpdateWeapon(weaponHere);
         }
     }
 }

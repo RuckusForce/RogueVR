@@ -1182,6 +1182,26 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+--- !u!1 &69964068 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1574085058882576, guid: 9a5d0fc737a4ffb48b9ccdd37d5b17a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1704087281}
+--- !u!70 &69964069
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 69964068}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.15, y: -0.23}
+  m_Size: {x: 0.67, y: 1.33}
+  m_Direction: 0
 --- !u!1001 &75796070
 Prefab:
   m_ObjectHideFlags: 0
@@ -8321,7 +8341,7 @@ GameObject:
   - component: {fileID: 879738194}
   - component: {fileID: 879738193}
   m_Layer: 0
-  m_Name: WeaponSpawn (2)
+  m_Name: WeaponSpawn
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -14484,7 +14504,37 @@ Prefab:
       propertyPath: m_Name
       value: Hero2 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 70810094289464520, guid: 9a5d0fc737a4ffb48b9ccdd37d5b17a7,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 137323255684461066, guid: 9a5d0fc737a4ffb48b9ccdd37d5b17a7,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 21977417996049286, guid: f6e9db878c7ebef4eab7208b4c9eb795,
+        type: 2}
+    - target: {fileID: 137456518324446812, guid: 9a5d0fc737a4ffb48b9ccdd37d5b17a7,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 21498316854969980, guid: bbd870fd8527b5a44a50a65a7b66c17a,
+        type: 2}
+    - target: {fileID: 137129874252780888, guid: 9a5d0fc737a4ffb48b9ccdd37d5b17a7,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 21604050315319926, guid: 42d756ef6b9bc9b40ad1b74502bba046,
+        type: 2}
+    - target: {fileID: 137615346911497176, guid: 9a5d0fc737a4ffb48b9ccdd37d5b17a7,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 21658682864490726, guid: 969a59ad54a9fe94691dc77cdc3cc230,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 70810094289464520, guid: 9a5d0fc737a4ffb48b9ccdd37d5b17a7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9a5d0fc737a4ffb48b9ccdd37d5b17a7, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1719010535
@@ -15101,7 +15151,7 @@ GameObject:
   - component: {fileID: 1849914333}
   - component: {fileID: 1849914332}
   m_Layer: 0
-  m_Name: WeaponSpawn (1)
+  m_Name: WeaponSpawn
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -16108,7 +16158,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 1261247015712814, guid: a1597108b05e5f049ac6c41bfc9af540, type: 2}
   - {fileID: 1293793734899652, guid: 9795d4c3b21602a49864873bc72c41dc, type: 2}
-  weaponHere: {fileID: 1293793734899652, guid: 9795d4c3b21602a49864873bc72c41dc, type: 2}
+  weaponHere: {fileID: 0}
 --- !u!212 &1968352548
 SpriteRenderer:
   m_ObjectHideFlags: 0

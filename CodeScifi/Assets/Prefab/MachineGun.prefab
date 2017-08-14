@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4694335436812024}
   - component: {fileID: 212875285461141892}
   - component: {fileID: 114675501062453768}
+  - component: {fileID: 61046133770268022}
   m_Layer: 0
   m_Name: MachineGun
   m_TagString: Untagged
@@ -86,6 +87,31 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!61 &61046133770268022
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1293793734899652}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.6666667, y: 1.6666666}
+    newSize: {x: 8, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.6666667, y: 1.6666666}
+  m_EdgeRadius: 0
 --- !u!114 &114675501062453768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,7 +129,7 @@ MonoBehaviour:
   tip: {x: 2, y: 0, z: 0}
   projectileMode: 1
   fireRate: 1
-  nextFire: 0
+  nextFire: 5.202675
 --- !u!212 &212875285461141892
 SpriteRenderer:
   m_ObjectHideFlags: 1
