@@ -990,7 +990,7 @@ Prefab:
     - target: {fileID: 224438643848220116, guid: 5ac913b78c3303741be2161e1fa97422,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224438643848220116, guid: 5ac913b78c3303741be2161e1fa97422,
         type: 2}
@@ -1000,7 +1000,7 @@ Prefab:
     - target: {fileID: 224438643848220116, guid: 5ac913b78c3303741be2161e1fa97422,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224670630928153626, guid: 5ac913b78c3303741be2161e1fa97422,
         type: 2}
@@ -1010,7 +1010,7 @@ Prefab:
     - target: {fileID: 224670630928153626, guid: 5ac913b78c3303741be2161e1fa97422,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 223683526337067480, guid: 5ac913b78c3303741be2161e1fa97422,
         type: 2}
@@ -3440,6 +3440,7 @@ MonoBehaviour:
   levelSeven: 0
   levelEight: 0
   levelNine: 0
+  freezeHorizontalMovement: 0
 --- !u!82 &233040454
 AudioSource:
   m_ObjectHideFlags: 0

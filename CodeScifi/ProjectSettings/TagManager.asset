@@ -12,6 +12,7 @@ TagManager:
   - listlast
   - ReticleButtons
   - ReticlePanel
+  - Bullet
   layers:
   - Default
   - TransparentFX
