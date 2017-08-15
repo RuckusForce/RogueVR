@@ -5,11 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private float speed = 45.0f;
-<<<<<<< HEAD
     public string skipTag;
-=======
-    //public string skipTag;
->>>>>>> Shinobi
 
     // Use this for initialization
     void Start()

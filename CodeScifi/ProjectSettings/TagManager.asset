@@ -6,17 +6,10 @@ TagManager:
   tags:
   - Ground
   - Enemy
-  - Obstacle
-  - Background
-<<<<<<< HEAD
-  - dontmove
-  - listlast
-  - ReticleButtons
   - ReticlePanel
+  - ReticleButtons
   - Bullet
-=======
-  - WeaponGet
->>>>>>> Shinobi
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -54,9 +47,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BG
-    uniqueID: 2542387759
+  - name: Background
+    uniqueID: 3540693369
     locked: 0
   - name: Player
-    uniqueID: 928813917
+    uniqueID: 2488303545
     locked: 0
