@@ -13,7 +13,6 @@ public class PlayerAttributesScript : MonoBehaviour
 	public bool grounded;
 	public bool sliding;
 
-	[SerializeField]
     GameObject gameController;
     RetryGame retryGame;
 
