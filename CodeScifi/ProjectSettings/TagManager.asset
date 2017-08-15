@@ -7,9 +7,12 @@ TagManager:
   - Ground
   - Enemy
   - ReticlePanel
+<<<<<<< HEAD
   - ReticleButtons
   - Bullet
   - Obstacle
+=======
+>>>>>>> parent of 7f1ebe3... Implemented DeathAnim
   layers:
   - Default
   - TransparentFX
