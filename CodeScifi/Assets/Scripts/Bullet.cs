@@ -5,28 +5,24 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private float speed = 45.0f;
-<<<<<<< HEAD
     public string skipTag;
-=======
-    //public string skipTag;
->>>>>>> Shinobi
 
     // Use this for initialization
     void Start()
     {
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 3);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //transform.position += transform.right * Time.deltaTime * speed;
+        transform.position += transform.right * Time.deltaTime * speed;
     }
 
-    private void OnCollision2D(Collision2D c)
+    private void OnCollisionEnter(Collision c)
     {
         //destroy this object when it collides with anything 
-        if (c.gameObject.tag == "Enemy" || c.gameObject.name == "Ground")
+        if (c.gameObject.tag != skipTag)
             GameObject.Destroy(gameObject);
     }
 }
