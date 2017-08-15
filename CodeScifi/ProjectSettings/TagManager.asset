@@ -8,11 +8,15 @@ TagManager:
   - Enemy
   - Obstacle
   - Background
+<<<<<<< HEAD
   - dontmove
   - listlast
   - ReticleButtons
   - ReticlePanel
   - Bullet
+=======
+  - WeaponGet
+>>>>>>> Shinobi
   layers:
   - Default
   - TransparentFX
