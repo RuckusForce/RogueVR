@@ -27,3 +27,7 @@ Make it more sophisticated but functional
 --------------------------------------------
 Added:
 Bullet physics script
+Weapon Pick up
+Weapon Behavior
+Weapon Manager
+Example Sprites
