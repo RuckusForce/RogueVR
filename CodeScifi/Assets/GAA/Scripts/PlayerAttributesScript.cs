@@ -95,7 +95,7 @@ public class PlayerAttributesScript : MonoBehaviour
         {
             //SceneManager.LoadScene("You Lose Screen");
             Debug.Log("You died.");
-            retryGame.Retry();
+            //retryGame.Retry();
         }
         #endregion
     }
