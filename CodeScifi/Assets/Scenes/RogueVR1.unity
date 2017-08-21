@@ -781,7 +781,7 @@ Prefab:
     - target: {fileID: 224438643848220116, guid: 5ac913b78c3303741be2161e1fa97422,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 36.500004
+      value: 36.5
       objectReference: {fileID: 0}
     - target: {fileID: 224438643848220116, guid: 5ac913b78c3303741be2161e1fa97422,
         type: 2}
@@ -14236,7 +14236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1590336611}
   m_Layer: 0
-  m_Name: I Fixed the collision issue
+  m_Name: Re-Upload
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -14988,7 +14988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1785142795}
   m_Layer: 0
-  m_Name: To_Gerard
+  m_Name: To_Chris
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
