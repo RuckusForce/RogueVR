@@ -19,10 +19,10 @@ public class Bullet : MonoBehaviour
         //transform.position += transform.right * Time.deltaTime * speed;
     }
 
-    private void OnCollision2D(Collision2D c)
+    private void OnCollisionEnter2D(Collision2D c)
     {
         //destroy this object when it collides with anything 
-        if (c.gameObject.tag == "Enemy" || c.gameObject.name == "Ground")
+        if (c.gameObject.tag == "Enemy" || c.gameObject.tag == "Ground")
             GameObject.Destroy(gameObject);
     }
 }

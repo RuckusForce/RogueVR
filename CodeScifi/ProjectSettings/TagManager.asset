@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Background
   - WeaponGet
+  - Detect_Ground
   layers:
   - Default
   - TransparentFX

@@ -2,124 +2,126 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInputScript : MonoBehaviour {
+public class PlayerInputScript : MonoBehaviour
+{
 
-	public PlayerAttributesScript attributes;
-	public Inventory inventory;
-	private Transform parent;
+    public PlayerAttributesScript attributes;
+    public Inventory inventory;
+    private Transform parent;
 
-	public Animator anim;
-	public Rigidbody2D rb;
-	public Vector2 movement;
-	public float moveSpeed;
-	public bool dead;
-	public float jumpStrength;
-	public float automaticHorizontalMoveSpeed;
-	public float jumpVelocity;
-	public int maxJumpCount;
+    public Animator anim;
+    public Rigidbody2D rb;
+    public Vector2 movement;
+    public float moveSpeed;
+    public bool dead;
+    public float jumpStrength;
+    public float automaticHorizontalMoveSpeed;
+    public float jumpVelocity;
+    public int maxJumpCount;
 
-	public float levelTime;
-	public float levelTwo;
-	public float levelThree;
-	public float levelFour;
-	public float levelFive;
-	public float levelSix;
-	public float levelSeven;
-	public float levelEight;
-	public float levelNine;
+    public float levelTime;
+    public float levelTwo;
+    public float levelThree;
+    public float levelFour;
+    public float levelFive;
+    public float levelSix;
+    public float levelSeven;
+    public float levelEight;
+    public float levelNine;
 
-	AudioSource jumpAudioSource;
+    AudioSource jumpAudioSource;
 
-	void Awake() {
-		OVRTouchpad.Create();
-		OVRTouchpad.TouchHandler += HandleTouchHandler;
+    void Awake() {
+        //OVRTouchpad.Create();
+        //OVRTouchpad.TouchHandler += HandleTouchHandler;
 
-		parent = transform.parent;
-		attributes = parent.GetComponentInChildren<PlayerAttributesScript>();
-		inventory = FindObjectOfType<Inventory>();
-		anim = GetComponentInParent<Animator>();
-		rb = GetComponentInParent<Rigidbody2D>();
-		//moveSpeed = .1f;
-		
-		dead = false;
-		jumpStrength = 5f;
-		automaticHorizontalMoveSpeed = 1f;
-		moveSpeed = 6f;
-		jumpVelocity = 0f;
-		maxJumpCount = 2;
 
-		levelTime = 0f;
-		levelTwo = 10f;
-		levelThree = 20f;
-		levelFour = 30f;
-		levelFive = 40f;
-		levelSix = 45f;
-		levelSeven = 50f;
-		levelEight = 55f;
-		levelNine = 60f;
+        parent = transform.parent;
+        attributes = parent.GetComponentInChildren<PlayerAttributesScript>();
+        inventory = FindObjectOfType<Inventory>();
+        anim = GetComponentInParent<Animator>();
+        rb = GetComponentInParent<Rigidbody2D>();
+        //moveSpeed = .1f;
 
-		jumpAudioSource = GetComponent<AudioSource>();
-	}
+        dead = false;
+        jumpStrength = 5f;
+        automaticHorizontalMoveSpeed = 1f;
+        moveSpeed = 6f;
+        jumpVelocity = 0f;
+        maxJumpCount = 2;
+
+        levelTime = 0f;
+        levelTwo = 10f;
+        levelThree = 20f;
+        levelFour = 30f;
+        levelFive = 40f;
+        levelSix = 45f;
+        levelSeven = 50f;
+        levelEight = 55f;
+        levelNine = 60f;
+
+        jumpAudioSource = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-		#region Falling Attributes
-		if (!attributes.grounded && !anim.GetBool("Falling"))
-		{
-			anim.SetBool("Falling", true);
-		}
-		else if (attributes.grounded) {
-			anim.SetBool("Falling", false);
-		}
-		#endregion
+        #region Falling Attributes
+        if (!attributes.grounded && !anim.GetBool("Falling"))
+        {
+            anim.SetBool("Falling", true);
+        }
+        else if (attributes.grounded) {
+            anim.SetBool("Falling", false);
+        }
+        #endregion
 
-		#region Horizontal Movement Controls (Disabled)
-		//if (!dead)
-		//{
-		//	float moveHorizontal = Input.GetAxisRaw("Horizontal");
-		//	float moveVertical = Input.GetAxisRaw("Vertical");
+        #region Horizontal Movement Controls (Disabled)
+        //if (!dead)
+        //{
+        //	float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        //	float moveVertical = Input.GetAxisRaw("Vertical");
 
-		//	anim.SetFloat("Move", moveHorizontal);
-		//	if (moveHorizontal < 0)
-		//	{
-		//		parent.transform.localScale = new Vector3(-1f, 1f, 1f);
-		//	}
-		//	else if (moveHorizontal > 0)
-		//	{
-		//		parent.transform.localScale = new Vector3(1f, 1f, 1f);
-		//	}
+        //	anim.SetFloat("Move", moveHorizontal);
+        //	if (moveHorizontal < 0)
+        //	{
+        //		parent.transform.localScale = new Vector3(-1f, 1f, 1f);
+        //	}
+        //	else if (moveHorizontal > 0)
+        //	{
+        //		parent.transform.localScale = new Vector3(1f, 1f, 1f);
+        //	}
 
-		//	movement = new Vector2(moveHorizontal * moveSpeed, moveVertical);
+        //	movement = new Vector2(moveHorizontal * moveSpeed, moveVertical);
 
-		//	parent.transform.position = new Vector2(parent.transform.position.x + moveHorizontal * moveSpeed, parent.transform.position.y);
-		//}
-		////movement may be getting limited by animator? Yep, Animator Component -> UpdateMode -> Animate Physics
+        //	parent.transform.position = new Vector2(parent.transform.position.x + moveHorizontal * moveSpeed, parent.transform.position.y);
+        //}
+        ////movement may be getting limited by animator? Yep, Animator Component -> UpdateMode -> Animate Physics
 
-		#endregion
+        #endregion
 
-		
 
-		#region Sliding Controls (Disabled)		
-		//if (Input.GetKeyDown(KeyCode.DownArrow))
-		//{
-		//	if (!dead && attributes.grounded)
-		//	{
-		//		anim.SetTrigger("Sliding");
-		//		//anim.SetBool("Sliding",true);
-		//		attributes.sliding = true;
-		//	}
-		//}
-		//else if (Input.GetKeyUp(KeyCode.DownArrow))
-		//{
-		//	anim.SetTrigger("sliding");
-		//	//anim.SetBool("Sliding", false);
-		//	attributes.sliding = false;
-		//}
-		#endregion
 
-		#region Attribute Controls
-		if (Input.GetKeyDown(KeyCode.Y))
+        #region Sliding Controls (Disabled)		
+        //if (Input.GetKeyDown(KeyCode.DownArrow))
+        //{
+        //	if (!dead && attributes.grounded)
+        //	{
+        //		anim.SetTrigger("Sliding");
+        //		//anim.SetBool("Sliding",true);
+        //		attributes.sliding = true;
+        //	}
+        //}
+        //else if (Input.GetKeyUp(KeyCode.DownArrow))
+        //{
+        //	anim.SetTrigger("sliding");
+        //	//anim.SetBool("Sliding", false);
+        //	attributes.sliding = false;
+        //}
+        #endregion
+
+        #region Attribute Controls
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             attributes.PlayerDecreaseHealth(10f);
         }
@@ -148,7 +150,7 @@ public class PlayerInputScript : MonoBehaviour {
 
         #endregion
 
-		#region Item Controls
+        #region Item Controls
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
             inventory.UseItemFromSlot(0);
         }
@@ -180,7 +182,7 @@ public class PlayerInputScript : MonoBehaviour {
         }
         #endregion
 
-		#region Weapon Controls
+        #region Weapon Controls
         if (Input.GetKeyDown(KeyCode.R)) {
             inventory.CycleWeaponBackward();
         }
@@ -189,108 +191,141 @@ public class PlayerInputScript : MonoBehaviour {
         }
         #endregion
 
-		#region Poses
-		if (!dead)
-		{
-			if (Input.GetKeyDown(KeyCode.UpArrow))
-			{
-				//anim.SetTrigger("Death");
-				//dead = true;
-			}
-		}
-		#endregion
-	}
+        #region Poses
+        if (!dead)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                //anim.SetTrigger("Death");
+                //dead = true;
+            }
+        }
+        #endregion
+    }
 
-	void FixedUpdate() {
+    void FixedUpdate() {
+        HandleJump();
 
 
-		#region Automatic Horizonal Movement (rb.AddForce) 
-		//if (!dead)
-		//{
-		//	moveSpeed = 3200f;
-		//	anim.SetFloat("Move", automaticHorizontalMoveSpeed);
-		//	parent.transform.localScale = new Vector3(1f, 1f, 1f);//will be used later for changing direction
+        #region Automatic Horizonal Movement (rb.AddForce) 
+        //if (!dead)
+        //{
+        //	moveSpeed = 3200f;
+        //	anim.SetFloat("Move", automaticHorizontalMoveSpeed);
+        //	parent.transform.localScale = new Vector3(1f, 1f, 1f);//will be used later for changing direction
 
-		//	movement = new Vector2(automaticHorizontalMoveSpeed * moveSpeed, rb.velocity.y);
-		//	//parent.transform.position = new Vector2(parent.transform.position.x + moveHorizontal * moveSpeed, parent.transform.position.y);
-		//	//above may be causing slip through, using Continuous Collision Detection seems to work for now, but modifying position directly is bad practice.
-		//	//rb.MovePosition(parent.transform.position + transform.right * moveHorizontal * Time.deltaTime);//only works when the Rigidbody is kinematic
-		//	//rb.velocity = movement;//velocity gets modified, but character doesn't move. May be due to Apply Root Animation of Animator modifying velocity at the same time.
-		//	rb.AddForce(movement);//has drift that may or may not be a good thing
-		//}
-		#endregion
+        //	movement = new Vector2(automaticHorizontalMoveSpeed * moveSpeed, rb.velocity.y);
+        //	//parent.transform.position = new Vector2(parent.transform.position.x + moveHorizontal * moveSpeed, parent.transform.position.y);
+        //	//above may be causing slip through, using Continuous Collision Detection seems to work for now, but modifying position directly is bad practice.
+        //	//rb.MovePosition(parent.transform.position + transform.right * moveHorizontal * Time.deltaTime);//only works when the Rigidbody is kinematic
+        //	//rb.velocity = movement;//velocity gets modified, but character doesn't move. May be due to Apply Root Animation of Animator modifying velocity at the same time.
+        //	rb.AddForce(movement);//has drift that may or may not be a good thing
+        //}
+        #endregion
 
-		#region Automatic Horizontal Movement (rb.velocity)
-		if (!dead)
-		{			
-			anim.SetFloat("MoveX", automaticHorizontalMoveSpeed);
-			parent.transform.localScale = new Vector3(1f, 1f, 1f);//used for changing direction
+        #region Automatic Horizontal Movement (rb.velocity)
+        if (!dead)
+        {
+            anim.SetFloat("MoveX", automaticHorizontalMoveSpeed);
+            parent.transform.localScale = new Vector3(1f, 1f, 1f);//used for changing direction
 
-			#region Speed modifications per level
-			if (Time.timeSinceLevelLoad > levelTime)
-			{
-				levelTime = levelTime + 5f;
-				moveSpeed = moveSpeed + .4f;
-			}
-			#endregion
+            #region Speed modifications per level
+            if (Time.timeSinceLevelLoad > levelTime)
+            {
+                levelTime = levelTime + 5f;
+                moveSpeed = moveSpeed + .4f;
+            }
+            #endregion
 
-			movement = new Vector2(automaticHorizontalMoveSpeed * moveSpeed, rb.velocity.y);
-			rb.velocity = movement;//velocity gets modified, but character doesn't move. May be due to Apply Root Animation of Animator modifying velocity at the same time.
-			//above now works. Animator needed to have Apply Root Motion, Normal Update Mode, Cull Completely Culling Mode
-			//also had a simulated dynamic rigidbody2d
+            movement = new Vector2(automaticHorizontalMoveSpeed * moveSpeed, rb.velocity.y);
+            rb.velocity = movement;//velocity gets modified, but character doesn't move. May be due to Apply Root Animation of Animator modifying velocity at the same time.
+                                   //above now works. Animator needed to have Apply Root Motion, Normal Update Mode, Cull Completely Culling Mode
+                                   //also had a simulated dynamic rigidbody2d
 
-		}
-		#endregion
-	}
+        }
+        #endregion
+    }
 
-	void HandleTouchHandler(object sender, System.EventArgs e)
-	{
-		OVRTouchpad.TouchArgs touchArgs = (OVRTouchpad.TouchArgs)e;
-		if (touchArgs.TouchType == OVRTouchpad.TouchEvent.SingleTap)
-		{
-			//TODO: Insert code here to handle a single tap.  Note that there are other TouchTypes you can check for like directional swipes, but double tap is not currently implemented I believe.
-			//rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-			#region Jump Controls
-			//if (Input.GetKeyDown(KeyCode.Space))
-			//{
-				if (!dead)
-				{
-					if (attributes.grounded)
-					{
-						maxJumpCount = 2;//double jump capacity
-						if (!anim.GetBool("Sliding"))
-						{
-							maxJumpCount--;
-							rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
-							jumpAudioSource.Play();
-						}
-					}
-					else if (!attributes.grounded && maxJumpCount > 0)
-					{
-						if (!anim.GetBool("Sliding"))
-						{
-							maxJumpCount--;
-							rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
-							jumpAudioSource.Play();
-						}
-					}
+    void HandleTouchHandler(object sender, System.EventArgs e)
+    {
+        //OVRTouchpad.TouchArgs touchArgs = (OVRTouchpad.TouchArgs)e;
+        //if (touchArgs.TouchType == OVRTouchpad.TouchEvent.SingleTap)
+        //{
+        //TODO: Insert code here to handle a single tap.  Note that there are other TouchTypes you can check for like directional swipes, but double tap is not currently implemented I believe.
+        //rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        #region Jump Controls
+        if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            if (!dead)
+            {
+                if (attributes.grounded)
+                {
+                    maxJumpCount = 2;//double jump capacity
+                    if (!anim.GetBool("Sliding"))
+                    {
+                        maxJumpCount--;
+                        rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+                        jumpAudioSource.Play();
+                    }
+                }
+                else if (!attributes.grounded && maxJumpCount > 0)
+                {
+                    if (!anim.GetBool("Sliding"))
+                    {
+                        maxJumpCount--;
+                        rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+                        jumpAudioSource.Play();
+                    }
+                }
 
-					//if (attributes.grounded && !anim.GetBool("Sliding") && !anim.GetBool("Falling"))//maybe turn sliding into a bool instead of a trigger?
-					//{
-					//	//jump
-					//	Debug.Log("Jump");
-					//	maxJumpCount = 2;
+                //if (attributes.grounded && !anim.GetBool("Sliding") && !anim.GetBool("Falling"))//maybe turn sliding into a bool instead of a trigger?
+                //{
+                //	//jump
+                //	Debug.Log("Jump");
+                //	maxJumpCount = 2;
 
-					//	rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
-					//	//anim.SetTrigger("Jumping");
-					//	//jumpVelocity = 6f;
-					//} 
-					//else {
-					//	//don't jump
-					//}
-				}
-			//}
-			#endregion
-		}
-	}
+                //	rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+                //	//anim.SetTrigger("Jumping");
+                //	//jumpVelocity = 6f;
+                //} 
+                //else {
+                //	//don't jump
+                //}
+                //}
+                //}
+                #endregion
+            }
+    }
+
+    public void HandleJump() //I just put this temporary due to the OVR issue
+    {
+        #region Jump Controls
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!dead)
+            {
+                if (attributes.grounded)
+                {
+                    maxJumpCount = 2;//double jump capacity
+                    if (!anim.GetBool("Sliding"))
+                    {
+                        maxJumpCount--;
+                        rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+                        jumpAudioSource.Play();
+                    }
+                }
+                else if (!attributes.grounded && maxJumpCount > 0)
+                {
+                    if (!anim.GetBool("Sliding"))
+                    {
+                        maxJumpCount--;
+                        rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+                        jumpAudioSource.Play();
+                    }
+                }
+            }
+        }
+    }
+    #endregion
+
 }

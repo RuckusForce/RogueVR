@@ -6,7 +6,7 @@ public class WeaponBehavior : MonoBehaviour
 {
 
     public enum Modes
-    { handgun, smg, shotgun }
+    { handgun, smg }
 
     public Sprite sprite;
     public GameObject projectile;

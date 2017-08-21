@@ -20,7 +20,7 @@ public class WeaponManager : MonoBehaviour
     {
         HandgunFire();
         SMG_Fire();
-        Shotgun_Fire();
+        //Shotgun_Fire();
     }
 
     public void UpdateWeapon(GameObject newWeapon)
@@ -59,13 +59,13 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    public void Shotgun_Fire()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && wpn.projectileMode == WeaponBehavior.Modes.shotgun)
-        {
-            Vector3 rotation = transform.localScale.x == 1 ? Vector3.zero : Vector3.forward * 180;
-            GameObject projectile = (GameObject)Instantiate(wpn.projectile, transform.position + wpn.tip, Quaternion.Euler(rotation));
-            projectile.GetComponent<Rigidbody2D>().velocity = transform.parent.localScale.x * Vector2.right * wpn.projectileSpeed;
+    //public void Shotgun_Fire()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Mouse1) && wpn.projectileMode == WeaponBehavior.Modes.shotgun)
+    //    {
+    //        Vector3 rotation = transform.localScale.x == 1 ? Vector3.zero : Vector3.forward * 180;
+    //        GameObject projectile = (GameObject)Instantiate(wpn.projectile, transform.position + wpn.tip, Quaternion.Euler(rotation));
+    //        projectile.GetComponent<Rigidbody2D>().velocity = transform.parent.localScale.x * Vector2.right * wpn.projectileSpeed;
 
 
             //wpn.bullet1RX = Random.Range(0, 0);
@@ -89,6 +89,6 @@ public class WeaponManager : MonoBehaviour
             //Pellet3.GetComponent<Transform>().Rotate(wpn.bullet3RX, wpn.bullet3RY, 0);
             //Pellet3.GetComponent<Rigidbody2D>().AddRelativeForce(wpn.shootPoint3.right * 2, ForceMode2D.Impulse);
             //Destroy(Pellet3, 6);
-        }
-    }
+    //    }
+    //}
 }

@@ -31,3 +31,12 @@ Weapon Pick up
 Weapon Behavior
 Weapon Manager
 Example Sprites
+---------------------------------------------
+8/20/2017:
+I was able to fix the collision issue when the bullet collides with the
+Enemy and the platforms. The only issue is that the bullet still has alot of power to
+push the shit out of the Enemy. LOL!
+
+FYI!
+Also on the PlayerInputScript the jumping function is off because we are not using OVR gamepad
+and I created a temporary "HandleJump" function for the moment. So don't be alarm. 
