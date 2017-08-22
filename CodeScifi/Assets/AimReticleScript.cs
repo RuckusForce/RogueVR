@@ -18,23 +18,33 @@ public class AimReticleScript : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
 		//Debug.Log(collision.gameObject.name + " has entered.");
-		if (collision.gameObject.CompareTag("Enemy")) {
-            targetObject = collision.gameObject;
-            targetList.Add(targetObject);
-            //Destroy(collision.gameObject);
-        }
+		if (collision.gameObject.CompareTag("Enemy"))
+		{
+			targetObject = collision.gameObject;
+			targetList.Add(targetObject);
+			//Destroy(collision.gameObject);
+		}
 		else if (collision.gameObject.CompareTag("ReticleButtons"))
 		{
 			Debug.Log("ReticleButton has entered.");
 			collision.gameObject.GetComponent<TestButton>().testButtonPress();
-			
+
+		}
+		else if (collision.gameObject.CompareTag("Shootable")) {
+			Debug.Log("Shootable has entered.");
+			targetObject = collision.gameObject;
+			targetList.Add(targetObject);
 		}
 	}
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")) {
-            targetList.Remove(collision.gameObject);
-        }
+		if (collision.gameObject.CompareTag("Enemy"))
+		{
+			targetList.Remove(collision.gameObject);
+		}
+		else if (collision.gameObject.CompareTag("Shootable")) {
+			targetList.Remove(collision.gameObject);
+		}
     }
 
     public bool HasTarget() {

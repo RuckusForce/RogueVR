@@ -13,6 +13,9 @@ TagManager:
   - ReticleButtons
   - ReticlePanel
   - Bullet
+  - DeactivateOnPass
+  - DustTriggers
+  - Shootable
   layers:
   - Default
   - TransparentFX

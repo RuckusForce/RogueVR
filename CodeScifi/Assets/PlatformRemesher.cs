@@ -81,9 +81,12 @@ public class PlatformRemesher : MonoBehaviour
 	}
 
 	void Awake() {
-		pg = GameObject.Find("PlatformGenerator").GetComponent<PlatformGenerator>();
-		//use Assert here to check for pg
 		timeKeeper = GameObject.Find("ValueTime").GetComponent<TimeKeeperScript>();
+		if (!timeKeeper.pgOff) {
+			pg = GameObject.Find("PlatformGenerator").GetComponent<PlatformGenerator>();
+			//use Assert here to check for pg
+		}
+		
 	}
 
 	public void HasLeft()

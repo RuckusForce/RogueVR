@@ -1,0 +1,515 @@
+fileFormatVersion: 2
+guid: 0a2f05df3c6526d46a1695394c3b861a
+timeCreated: 1503043165
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: cyborg squad_06 _slices copy_0
+    21300002: cyborg squad_06 _slices copy_1
+    21300004: cyborg squad_06 _slices copy_2
+    21300006: cyborg squad_06 _slices copy_4
+    21300008: cyborg squad_06 _slices copy_5
+    21300010: cyborg squad_06 _slices copy_6
+    21300012: cyborg squad_06 _slices copy_7
+    21300014: cyborg squad_06 _slices copy_8
+    21300016: cyborg squad_06 _slices copy_9
+    21300018: cyborg squad_06 _slices copy_10
+    21300020: cyborg squad_06 _slices copy_11
+    21300022: cyborg squad_06 _slices copy_12
+    21300024: cyborg squad_06 _slices copy_13
+    21300026: cyborg squad_06 _slices copy_14
+    21300028: cyborg squad_06 _slices copy_15
+    21300030: cyborg squad_06 _slices copy_16
+    21300032: cyborg squad_06 _slices copy_17
+    21300034: cyborg squad_06 _slices copy_18
+    21300036: cyborg squad_06 _slices copy_19
+    21300038: cyborg squad_06 _slices copy_20
+    21300040: cyborg squad_06 _slices copy_21
+    21300042: cyborg squad_06 _slices copy_22
+    21300044: cyborg squad_06 _slices copy_23
+    21300046: cyborg squad_06 _slices copy_24
+    21300048: cyborg squad_06 _slices copy_25
+    21300050: cyborg squad_06 _slices copy_26
+    21300052: cyborg squad_06 _slices copy_27
+    21300054: cyborg squad_06 _slices copy_28
+    21300056: cyborg squad_06 _slices copy_29
+    21300058: cyborg squad_06 _slices copy_30
+    21300060: cyborg squad_06 _slices copy_31
+    21300062: cyborg squad_06 _slices copy_32
+    21300064: cyborg squad_06 _slices copy_33
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1200
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_0
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 204
+        width: 819
+        height: 2848
+      alignment: 9
+      pivot: {x: 0.467725, y: 0.582206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_1
+      rect:
+        serializedVersion: 2
+        x: 2571
+        y: 2510
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_2
+      rect:
+        serializedVersion: 2
+        x: 2644
+        y: 226
+        width: 2234
+        height: 2826
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_4
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 533
+        width: 467
+        height: 1624
+      alignment: 9
+      pivot: {x: 0.49999988, y: 0.92551726}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_5
+      rect:
+        serializedVersion: 2
+        x: 4881
+        y: 2080
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_6
+      rect:
+        serializedVersion: 2
+        x: 4880
+        y: 2059
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_7
+      rect:
+        serializedVersion: 2
+        x: 4885
+        y: 2034
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_8
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 1704
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_9
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 1683
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_10
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1631
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_11
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 1651
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_12
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 1603
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_13
+      rect:
+        serializedVersion: 2
+        x: 2226
+        y: 532
+        width: 387
+        height: 1086
+      alignment: 9
+      pivot: {x: 0.4121819, y: 0.8824854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_15
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 1096
+        width: 20
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_17
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 527
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_19
+      rect:
+        serializedVersion: 2
+        x: 2445
+        y: 521
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_20
+      rect:
+        serializedVersion: 2
+        x: 2458
+        y: 516
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_21
+      rect:
+        serializedVersion: 2
+        x: 1786
+        y: 393
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_22
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 260
+        width: 24
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_23
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 341
+        width: 5
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_24
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 284
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_25
+      rect:
+        serializedVersion: 2
+        x: 1937
+        y: 287
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_26
+      rect:
+        serializedVersion: 2
+        x: 4896
+        y: 287
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_27
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 214
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_28
+      rect:
+        serializedVersion: 2
+        x: 4176
+        y: 214
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_29
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 198
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_30
+      rect:
+        serializedVersion: 2
+        x: 4138
+        y: 199
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_31
+      rect:
+        serializedVersion: 2
+        x: 4209
+        y: 204
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_32
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 181
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_33
+      rect:
+        serializedVersion: 2
+        x: 4192
+        y: 181
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

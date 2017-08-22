@@ -13,7 +13,12 @@ public class TimeKeeperScript : MonoBehaviour {
 	Vector3 lastPlatformPosition;
 	float groundHeight;
 	public float levelTimeLimit;
-	
+	public float timeToFade;
+	public float fadeVar;
+	GameObject fadeToBlack;
+	SpriteRenderer sr;
+	public bool pgOff = false;
+
 	void Awake() {
 		myText = GetComponent<Text>();
 		level1C = GameObject.Find("Level1C");
@@ -22,6 +27,9 @@ public class TimeKeeperScript : MonoBehaviour {
 		platformGeneratorArray = platformGenerators.GetComponentsInChildren<Transform>();
 		groundHeight = -4f;
 		levelTimeLimit = 10f;
+		timeToFade = levelTimeLimit + 3f;
+		fadeToBlack = GameObject.Find("FadeToBlack");
+		sr = fadeToBlack.GetComponent<SpriteRenderer>();
 	}
 
 	// Update is called once per frame
@@ -36,10 +44,17 @@ public class TimeKeeperScript : MonoBehaviour {
 		//}
 		#endregion
 		myText.text = "" + Time.timeSinceLevelLoad.ToString("0.00");
+		
+		//Need to figure out fading to black
+		//fadeVar = Mathf.Lerp(fadeVar, 255f, 3f);
 
 		#region Level Setter
-		//After 10s, stop the platform generators
-		if (Time.timeSinceLevelLoad > levelTimeLimit) {
+		if (Time.timeSinceLevelLoad > timeToFade) {
+			Debug.Log("Fade");
+			//sr.color = new Color(1f, 1f, 1f, fadeVar);
+		}
+		else if (Time.timeSinceLevelLoad > levelTimeLimit) {
+			pgOff = true;
 			lastPlatformPosition = platformGeneratorArray[1].position;
 			lastPlatformPosition = new Vector3(
 				lastPlatformPosition.x,
