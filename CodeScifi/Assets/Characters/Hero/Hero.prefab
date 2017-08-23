@@ -1126,6 +1126,7 @@ MonoBehaviour:
   levelSeven: 0
   levelEight: 0
   levelNine: 0
+  freezeHorizontalMovement: 0
 --- !u!114 &114596440079697534
 MonoBehaviour:
   m_ObjectHideFlags: 1

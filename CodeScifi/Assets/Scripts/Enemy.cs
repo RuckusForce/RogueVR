@@ -2,96 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Character
 {
-    public float enemySpeed;
+    private IEnemyState currentState;
 
-
-    public GameObject enemyGraphic;
-    private bool canFlip = true;
-    private bool facingRight = false;
-    private float flipTime = 2f;
-    private float nextFlipChance = 0f;
-
-    //Attacking
-    public float chargeTime;
-    private float startChargeTime;
-    private bool charging;
-    Rigidbody2D enemyRB;
-
-    void Start()
+	public GameObject Target { get; set; }
+    
+    // Use this for initialization
+	 public override void Start ()
     {
-        enemyRB = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
+        base.Start();
+        ChangeState(new IdleState());
+	}
+	
+	// Update is called once per frame
+	void Update ()
     {
-        if (Time.time > nextFlipChance)
+        currentState.Execute();
+
+        LookAtTarget();
+	}
+    private void LookAtTarget()
+    {
+        if (Target != null)
         {
-            if (Random.Range(0, 3) >= 2) flipFacing();
+            float xDir = Target.transform.position.x - transform.position.x;
+
+            if (xDir < 0 && facingRight || xDir > 0 && !facingRight)
             {
-                nextFlipChance = Time.time + flipTime;
+                ChangeDirection();
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void ChangeState(IEnemyState newState)
     {
-        if (other.tag == "Player")
+        if(currentState !=null)
         {
-            if (facingRight && other.transform.position.x < transform.position.x)
-            {
-                flipFacing();
-            }
-            else if (!facingRight && other.transform.position.x > transform.position.x)
-            {
-                flipFacing();
-            }
-            canFlip = false;
-            charging = true;
-            startChargeTime = Time.time + chargeTime;
+            currentState.Exit();
         }
+
+        currentState = newState;
+
+        currentState.Enter(this);
     }
 
-    //private void OnTriggerStay2D(Collider2D other)
-    //{
-    //    if (other.tag == "Player")
-    //    {
-    //        if (startChargeTime < Time.time)
-    //        {
-    //            if (!facingRight)
-    //            {
-    //                enemyRB.AddForce(new Vector2(-1, 0) * enemySpeed);
-    //            }
-    //            else
-    //            {
-    //                enemyRB.AddForce(new Vector2(1, 0) * enemySpeed);
-    //            }
-    //        }
-    //    }
-    //}
-
-    private void OnTriggerExit2D(Collider2D other)
+    public void Move()
     {
-        if (other.tag == "Player")
-        {
-            canFlip = true;
-            charging = false;
-            enemyRB.velocity = new Vector2(0f, 0f);
-        }
+        MyAnimator.SetFloat("speed", 1);
+
+        transform.Translate(GetDirection() * (movementSpeed * Time.deltaTime));
     }
 
-    public void flipFacing()
+    public Vector2 GetDirection()
     {
-        if (!canFlip) return;
-        {
-            float facingX = enemyGraphic.transform.localScale.x;
-            facingX *= -1f;
-            //enemyGraphic.transform.localScale.x = new Vector3(facingX, enemyGraphic.transform.localScale.y, enemyGraphic.transform.localScale.z);
-            enemyGraphic.transform.localScale = new Vector3(facingX, enemyGraphic.transform.localScale.y, enemyGraphic.transform.localScale.z);
-            facingRight = !facingRight;
-        }
+        return facingRight ? Vector2.right : Vector2.left;
     }
-
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        currentState.OnTriggerEnter(other);
+    }
 }

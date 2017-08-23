@@ -16,6 +16,7 @@ TagManager:
   - DeactivateOnPass
   - DustTriggers
   - Shootable
+  - Edge
   layers:
   - Default
   - TransparentFX
