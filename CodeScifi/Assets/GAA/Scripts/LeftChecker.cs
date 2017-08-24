@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class LeftChecker : MonoBehaviour {
 
-	PlatformRespriter pr;
+	//PlatformRespriter pr;
+	PlatformRemesher pr;
 
 	// Use this for initialization
 	void Awake()
 	{
-		pr = GetComponentInParent<PlatformRespriter>();
+		//pr = GetComponentInParent<PlatformRespriter>();
+		pr = GetComponentInParent<PlatformRemesher>();
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

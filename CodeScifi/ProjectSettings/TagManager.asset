@@ -8,6 +8,15 @@ TagManager:
   - Enemy
   - Obstacle
   - Background
+  - dontmove
+  - listlast
+  - ReticleButtons
+  - ReticlePanel
+  - Bullet
+  - DeactivateOnPass
+  - DustTriggers
+  - Shootable
+  - Edge
   layers:
   - Default
   - TransparentFX
@@ -17,7 +26,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - ReticleLayer
   - 
   - 
   - 

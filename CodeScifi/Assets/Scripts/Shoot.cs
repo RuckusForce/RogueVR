@@ -9,7 +9,7 @@ public class Shoot : MonoBehaviour
 
     private Rigidbody rigidbodyRef = null;
 
-    private float fireRate = 0.3f;
+    private float fireRate = 0.4f;
     private float nextFire;
 
     private void Awake()
@@ -30,7 +30,7 @@ public class Shoot : MonoBehaviour
 
     private void FireInput()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire)
+        if (Input.GetKey(KeyCode.Mouse1) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             Instantiate(bullet, transform.position + (transform.right * 1), transform.rotation);

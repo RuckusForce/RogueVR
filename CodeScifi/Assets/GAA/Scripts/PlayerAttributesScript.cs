@@ -43,11 +43,12 @@ public class PlayerAttributesScript : MonoBehaviour
 
     void Awake()
     {
-        healthBar = GameObject.Find("HealthBar").GetComponent<BarScript>();
-        energyBar = GameObject.Find("EnergyBar").GetComponent<BarScript>();
-        shieldBar = GameObject.Find("ShieldBar").GetComponent<BarScript>();
 
-        healthHUD = healthBar.GetComponentsInChildren<Image>()[2];
+		healthBar = GameObject.Find("HealthBar").GetComponent<BarScript>();
+		energyBar = GameObject.Find("EnergyBar").GetComponent<BarScript>();
+		shieldBar = GameObject.Find("ShieldBar").GetComponent<BarScript>();
+
+		healthHUD = healthBar.GetComponentsInChildren<Image>()[2];
         //0: health bar img, 1: mask img, 2: content img
 
         energyHUD = energyBar.GetComponentsInChildren<Image>()[2];
@@ -61,8 +62,8 @@ public class PlayerAttributesScript : MonoBehaviour
         //shield.Initialize(shieldBar);
 
         gameController = GameObject.Find("GameController");
-        retryGame = gameController.GetComponent<RetryGame>();
-    }
+		retryGame = gameController.GetComponent<RetryGame>();
+	}
 
     void Start() {
         invincible = false;
@@ -94,7 +95,7 @@ public class PlayerAttributesScript : MonoBehaviour
         {
             //SceneManager.LoadScene("You Lose Screen");
             Debug.Log("You died.");
-            retryGame.Retry();
+            //retryGame.Retry();
         }
         #endregion
     }

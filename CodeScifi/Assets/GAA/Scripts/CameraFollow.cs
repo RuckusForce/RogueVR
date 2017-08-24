@@ -6,6 +6,7 @@ public class CameraFollow : MonoBehaviour {
 
 	Transform target;
 	Transform cameraContainer;
+	Transform camera;
 	float posX;
 	float posY;
 	Vector2 velocity;
@@ -13,23 +14,39 @@ public class CameraFollow : MonoBehaviour {
 	float smoothTimeY;
 	float offsetX;
 	float offsetY;
+	float offsetZ;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		target = GameObject.Find("Hero2 (1)").transform;
-		cameraContainer = transform.parent;
+		camera = GameObject.Find("PlayerCamera").transform;
 		smoothTimeX = 0f;
 		smoothTimeY = .2f;
-		offsetX = -12f;
-		offsetY = 6f;
-		cameraContainer.position = new Vector3(cameraContainer.position.x, cameraContainer.position.y + offsetY, cameraContainer.position.z);
+		offsetX = -5f;
+		offsetY = 2f;
+		offsetZ = -20f;
+		camera.transform.position = new Vector3(transform.position.x, transform.position.y + offsetY, transform.position.z + offsetZ);
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        posX = Mathf.SmoothDamp(cameraContainer.position.x, target.transform.position.x, ref velocity.x, smoothTimeX);
-		cameraContainer.position = new Vector3(posX - offsetX, cameraContainer.position.y, cameraContainer.position.z);
-        //
-		//
-    }
+        posX = Mathf.SmoothDamp(transform.position.x, target.transform.position.x, ref velocity.x, smoothTimeX);
+		transform.position = new Vector3(posX - offsetX, transform.position.y, transform.position.z);
+	}
+
+	public Vector2 ReturnCameraMovement2D()
+	{
+		Vector2 camMovement = new Vector2(
+		transform.position.x,
+		transform.position.y);
+		return camMovement;
+	}
+
+	public Vector2 AdjustForCameraFollow(Vector2 rayPos)
+	{
+		Vector2 adjusted = new Vector2(
+		rayPos.x - cameraContainer.transform.position.x,
+		rayPos.y - cameraContainer.transform.position.y);
+		return adjusted;
+	}
 }

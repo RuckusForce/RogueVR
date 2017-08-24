@@ -45,37 +45,37 @@ public class Inventory : MonoBehaviour {
         //attach one of the weaponList to weaponPanel
     }
 
-    IEnumerator Start() {
-        slotAmount = 3;
+    //IEnumerator Start() {
+  //      slotAmount = 3;
 
-        yield return StartCoroutine(itemDatabase.LoadJson());//Would this finish the LoadJson and give us a complete database? And then continue initializing the Inventory with a now populated database?
+  //      yield return StartCoroutine(itemDatabase.LoadJson());//Would this finish the LoadJson and give us a complete database? And then continue initializing the Inventory with a now populated database?
 
-        //Wow, turning Start into a Coroutine works!
+  //      //Wow, turning Start into a Coroutine works!
 
-        for (int i = 0; i < slotAmount; i++) {
-            //add a blank inventory slot into the slots collective
-            itemStash.Add(new Item());//back-end, initialize items
-            slotsThatAreVisible.Add(Instantiate(slotPrefab));//back-end, setup slots
-            slotsThatAreVisible[i].GetComponent<ItemSlot>().slotID = i;
-            slotsThatAreVisible[i].transform.SetParent(slotPanel.transform);//front-end, show slots
-        }
+  //      for (int i = 0; i < slotAmount; i++) {
+  //          //add a blank inventory slot into the slots collective
+  //          itemStash.Add(new Item());//back-end, initialize items
+  //          slotsThatAreVisible.Add(Instantiate(slotPrefab));//back-end, setup slots
+  //          slotsThatAreVisible[i].GetComponent<ItemSlot>().slotID = i;
+  //          slotsThatAreVisible[i].transform.SetParent(slotPanel.transform);//front-end, show slots
+  //      }
 
-        for (int i = 0; i < itemDatabase.weaponDatabase.Count; i++) {//maybe for the future, have the weaponList actually store Weapon Types, rather than GameObjects
-            weaponList.Add(Instantiate(weaponPrefab));
-            weaponList[i].SetActive(false);
-            weaponList[i].transform.SetParent(weaponPanel.transform);
-            weaponList[i].transform.position = weaponList[i].transform.parent.position;
-            //weaponList[i].GetComponent<Image>() = itemDatabase.weaponDatabase[i].Sprite;
-            Weapon temp = FetchWeapon(i);
-            weaponList[i].GetComponent<Image>().sprite = temp.Sprite;
-            weaponList[i].GetComponent<WeaponData>().ID = temp.ID;
-        }
+  //      for (int i = 0; i < itemDatabase.weaponDatabase.Count; i++) {//maybe for the future, have the weaponList actually store Weapon Types, rather than GameObjects
+  //          weaponList.Add(Instantiate(weaponPrefab));
+  //          weaponList[i].SetActive(false);
+  //          weaponList[i].transform.SetParent(weaponPanel.transform);
+  //          weaponList[i].transform.position = weaponList[i].transform.parent.position;
+  //          //weaponList[i].GetComponent<Image>() = itemDatabase.weaponDatabase[i].Sprite;
+  //          Weapon temp = FetchWeapon(i);
+  //          weaponList[i].GetComponent<Image>().sprite = temp.Sprite;
+  //          weaponList[i].GetComponent<WeaponData>().ID = temp.ID;
+  //      }
 
-        AddToActiveWeapons(0);//add weaponList[0], not itemdatabase.weaponDatabase[0]
-        ShowCurrentWeapon();
-    }
+  //      AddToActiveWeapons(0);//add weaponList[0], not itemdatabase.weaponDatabase[0]
+		//ShowCurrentWeapon();
+	//}
 
-    public Weapon FetchWeapon(int id) {
+	public Weapon FetchWeapon(int id) {
         Weapon weapon = null;
 
         if (id == -1)
@@ -148,8 +148,8 @@ public class Inventory : MonoBehaviour {
     public void CycleWeaponForward() {
         weaponIndex++;
         weaponIndex = weaponIndex % activeWeaponList.Count;
-        ShowCurrentWeapon();
-    }
+		ShowCurrentWeapon();
+	}
 
     public void CycleWeaponBackward() {
         //weaponIndex--;

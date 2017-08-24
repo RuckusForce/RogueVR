@@ -75,21 +75,19 @@ public class PlatformGenerator : MonoBehaviour {
 		//minPlatformHeight = -3f;
 
 		theObstacle = Resources.Load("Prefabs/DummyObstacle") as GameObject;
-		obstaclePoolCount = 20;
+		obstaclePoolCount = 1;
 		for (int i = 0; i < obstaclePoolCount; i++) {
 			obstaclePool.Add(Instantiate(theObstacle));//can this be in the PlatformRespriter? No because we don't need multiple object pools
 			obstaclePool[i].gameObject.SetActive(false);
 		}
 
-		theEnemy = Resources.Load("Prefabs/Within_Range") as GameObject;
+		theEnemy = Resources.Load("Prefabs/EnemyWithSight") as GameObject;
 		enemyPoolCount = 20;
 		for (int i = 0; i < enemyPoolCount; i++)
 		{
 			enemyPool.Add(Instantiate(theEnemy));
 			enemyPool[i].gameObject.SetActive(false);
 		}
-
-
 	}
 
 	// Update is called once per frame
@@ -147,7 +145,8 @@ public class PlatformGenerator : MonoBehaviour {
 				{
 					tempPlatform.SetActive(false);
 				}
-				else if (randomInt % 45 == 0) {
+				else if (randomInt % 45 == 0)
+				{
 					tempEnemy = returnInactiveEnemy();
 					tempEnemy.transform.position = transform.position;
 					tempEnemy.SetActive(true);
