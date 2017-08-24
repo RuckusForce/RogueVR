@@ -81,15 +81,13 @@ public class PlatformGenerator : MonoBehaviour {
 			obstaclePool[i].gameObject.SetActive(false);
 		}
 
-		theEnemy = Resources.Load("Prefabs/Within_Range") as GameObject;
+		theEnemy = Resources.Load("Prefabs/EnemyWithSight") as GameObject;
 		enemyPoolCount = 20;
 		for (int i = 0; i < enemyPoolCount; i++)
 		{
 			enemyPool.Add(Instantiate(theEnemy));
 			enemyPool[i].gameObject.SetActive(false);
 		}
-
-
 	}
 
 	// Update is called once per frame
