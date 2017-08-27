@@ -13,11 +13,13 @@ public class TimeKeeperScript : MonoBehaviour {
 	Vector3 lastPlatformPosition;
 	float groundHeight;
 	public float levelTimeLimit;
+	public float timeUntilFade;
 	public float timeToFade;
 	public float fadeVar;
 	GameObject fadeToBlack;
 	SpriteRenderer sr;
 	public bool pgOff = false;
+	float lerpAccumulation;
 
 	void Awake() {
 		myText = GetComponent<Text>();
@@ -27,9 +29,11 @@ public class TimeKeeperScript : MonoBehaviour {
 		platformGeneratorArray = platformGenerators.GetComponentsInChildren<Transform>();
 		groundHeight = -4f;
 		levelTimeLimit = 10f;
-		timeToFade = levelTimeLimit + 3f;
+		timeUntilFade = 20f;
+		timeToFade = 5f;
 		fadeToBlack = GameObject.Find("FadeToBlack");
 		sr = fadeToBlack.GetComponent<SpriteRenderer>();
+		lerpAccumulation = 0f;
 	}
 
 	// Update is called once per frame
@@ -43,15 +47,19 @@ public class TimeKeeperScript : MonoBehaviour {
 		//	}
 		//}
 		#endregion
-		myText.text = "" + Time.timeSinceLevelLoad.ToString("0.00");
-		
+		//myText.text = "" + Time.timeSinceLevelLoad.ToString("0.00");
+		//myText.text = "" + Time.deltaTime.ToString("0.00");
 		//Need to figure out fading to black
-		//fadeVar = Mathf.Lerp(fadeVar, 255f, 3f);
+
 
 		#region Level Setter
-		if (Time.timeSinceLevelLoad > timeToFade) {
+		if (Time.timeSinceLevelLoad > (levelTimeLimit+ timeUntilFade)) {
 			Debug.Log("Fade");
-			//sr.color = new Color(1f, 1f, 1f, fadeVar);
+			lerpAccumulation += (Time.deltaTime / timeToFade);
+			fadeVar = Mathf.Lerp(fadeVar, 1f, lerpAccumulation);
+			myText.text = "" + fadeVar.ToString("0.00");
+			//myText.text = "" + lerpAccumulation.ToString("0.00");
+			sr.color = new Color(0f, 0f, 0f, fadeVar);
 		}
 		else if (Time.timeSinceLevelLoad > levelTimeLimit) {
 			pgOff = true;

@@ -68,20 +68,19 @@ public class PlayerInputScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+		#region Falling Attributes
+		if (!attributes.grounded && !anim.GetBool("Falling"))
+		{
+			anim.SetBool("Falling", true);
+		}
+		else if (attributes.grounded)
+		{
+			anim.SetBool("Falling", false);
+		}
+		#endregion
+
 		if (!freeze)
 		{
-
-			#region Falling Attributes
-			if (!attributes.grounded && !anim.GetBool("Falling"))
-			{
-				anim.SetBool("Falling", true);
-			}
-			else if (attributes.grounded)
-			{
-				anim.SetBool("Falling", false);
-			}
-			#endregion
-
 			#region Horizontal Movement Controls (Disabled)
 			//if (!dead)
 			//{
@@ -133,14 +132,6 @@ public class PlayerInputScript : MonoBehaviour {
 					Time.timeScale = 1f;
 				}
 
-			}
-			#endregion
-
-			#region [DEBUG] Restart with Esc Button
-			if (Input.GetKey(KeyCode.Escape))
-			{
-				SceneManager.LoadScene("RogueVR2");
-				Time.timeScale = 1f;
 			}
 			#endregion
 
@@ -250,6 +241,14 @@ public class PlayerInputScript : MonoBehaviour {
 			}
 			#endregion
 		}
+
+		#region [DEBUG] Restart with Esc Button
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			SceneManager.LoadScene("RogueVR2");
+			Time.timeScale = 1f;
+		}
+		#endregion
 	}
 
 	void FixedUpdate() {
@@ -296,6 +295,9 @@ public class PlayerInputScript : MonoBehaviour {
 
 			}
 			#endregion
+		}
+		else {
+			anim.SetFloat("MoveX", 0f);
 		}
 	}
 
