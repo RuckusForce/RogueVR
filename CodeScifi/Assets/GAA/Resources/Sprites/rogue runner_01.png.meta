@@ -1,21 +1,11 @@
 fileFormatVersion: 2
 guid: 46bcdd515f9551d4b8295169152a30f2
-timeCreated: 1496992676
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: rogue runner_01_0
-    21300002: rogue runner_01_1
-    21300004: rogue runner_01_2
-    21300006: rogue runner_01_3
-    21300008: rogue runner_01_4
-    21300010: rogue runner_01_5
-    21300012: rogue runner_01_6
-    21300014: rogue runner_01_7
+  fileIDToRecycleName: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -38,21 +28,21 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -1
-    wrapMode: 1
-  nPOTScale: 0
+    wrapMode: -1
+  nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 0
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 100
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 0
   textureShape: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
@@ -66,147 +56,11 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Standalone
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: WebGL
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: rogue runner_01_0
-      rect:
-        serializedVersion: 2
-        x: 759.49994
-        y: 1050
-        width: 379.00006
-        height: 161
-      alignment: 9
-      pivot: {x: 0.49472305, y: 0.5093168}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: rogue runner_01_1
-      rect:
-        serializedVersion: 2
-        x: 1193
-        y: 1000.49994
-        width: 269
-        height: 267.00006
-      alignment: 9
-      pivot: {x: 0.5, y: 0.49438214}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: rogue runner_01_2
-      rect:
-        serializedVersion: 2
-        x: 619
-        y: 1030
-        width: 22
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: rogue runner_01_3
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 325
-        width: 761
-        height: 701
-      alignment: 9
-      pivot: {x: 0.5, y: 0.49786022}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: rogue runner_01_4
-      rect:
-        serializedVersion: 2
-        x: 1314
-        y: 956
-        width: 22
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: rogue runner_01_5
-      rect:
-        serializedVersion: 2
-        x: 1004
-        y: 541
-        width: 374
-        height: 412
-      alignment: 9
-      pivot: {x: 0.50133693, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: rogue runner_01_6
-      rect:
-        serializedVersion: 2
-        x: 596
-        y: 61
-        width: 421
-        height: 415
-      alignment: 9
-      pivot: {x: 0.5, y: 0.49638554}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: rogue runner_01_7
-      rect:
-        serializedVersion: 2
-        x: 1194
-        y: 59
-        width: 265
-        height: 407
-      alignment: 9
-      pivot: {x: 0.49811321, y: 0.4987715}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
   spritePackingTag: 
-<<<<<<< HEAD
-  userData: 98520188885371
-=======
-<<<<<<< HEAD
-  userData: 98486292944898
-=======
-  userData: 98480890067278
->>>>>>> parent of 4cb4a1d... Merge branch 'Shinobi' into Gerard
->>>>>>> Gerard
+  userData: 98525467283655
   assetBundleName: 
   assetBundleVariant: 

@@ -72,6 +72,7 @@ public class LastStandEvent : MonoBehaviour {
 	}
 
 	IEnumerator TimeForShooting() {
+		//yield return (playerInputScript.WalkTowards(this.transform.position));
 		yield return new WaitForSeconds(freeShootingTime);
 		Flip();
 		playerInputScript.UnfreezeInput();

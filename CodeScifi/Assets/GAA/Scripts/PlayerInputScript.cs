@@ -308,4 +308,10 @@ public class PlayerInputScript : MonoBehaviour {
 	public void UnfreezeInput() {
 		freeze = false;
 	}
+
+	public bool WalkTowards(Vector3 target) {
+		Vector2 newTarget = new Vector2(target.x, target.y);
+		Vector2.MoveTowards(rb.position, newTarget, Time.deltaTime);
+		return true;
+	}
 }

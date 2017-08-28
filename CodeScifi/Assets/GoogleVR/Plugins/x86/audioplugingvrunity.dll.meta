@@ -3,65 +3,119 @@ guid: 6042170e05c0148b998dc7fc4a2a151e
 timeCreated: 1465328651
 licenseType: Pro
 PluginImporter:
-  serializedVersion: 1
+  serializedVersion: 2
   iconMap: {}
   executionOrder: {}
   isPreloaded: 1
+  isOverridable: 0
   platformData:
-    Android:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-    Any:
-      enabled: 0
-      settings: {}
-    Editor:
-      enabled: 1
-      settings:
-        CPU: x86
-        DefaultValueInitialized: true
-        OS: Windows
-    Linux:
-      enabled: 1
-      settings:
-        CPU: x86
-    Linux64:
-      enabled: 0
-      settings:
-        CPU: None
-    LinuxUniversal:
-      enabled: 0
-      settings:
-        CPU: x86
-    OSXIntel:
-      enabled: 1
-      settings:
-        CPU: AnyCPU
-    OSXIntel64:
-      enabled: 0
-      settings:
-        CPU: None
-    OSXUniversal:
-      enabled: 0
-      settings:
-        CPU: x86
-    SamsungTV:
-      enabled: 0
-      settings:
-        STV_MODEL: STANDARD_13
-    Win:
-      enabled: 1
-      settings:
-        CPU: AnyCPU
-    Win64:
-      enabled: 0
-      settings:
-        CPU: None
-    iOS:
-      enabled: 0
-      settings:
-        CompileFlags: 
-        FrameworkDependencies: 
+    data:
+      first:
+        Android: Android
+      second:
+        enabled: 0
+        settings:
+          CPU: AnyCPU
+    data:
+      first:
+        Any: 
+      second:
+        enabled: 0
+        settings: {}
+    data:
+      first:
+        Editor: Editor
+      second:
+        enabled: 1
+        settings:
+          CPU: x86
+          DefaultValueInitialized: true
+          OS: Windows
+    data:
+      first:
+        Facebook: Win
+      second:
+        enabled: 1
+        settings:
+          CPU: AnyCPU
+    data:
+      first:
+        Facebook: Win64
+      second:
+        enabled: 0
+        settings:
+          CPU: None
+    data:
+      first:
+        Samsung TV: SamsungTV
+      second:
+        enabled: 0
+        settings:
+          STV_MODEL: STANDARD_13
+    data:
+      first:
+        Standalone: Linux
+      second:
+        enabled: 1
+        settings:
+          CPU: x86
+    data:
+      first:
+        Standalone: Linux64
+      second:
+        enabled: 0
+        settings:
+          CPU: None
+    data:
+      first:
+        Standalone: LinuxUniversal
+      second:
+        enabled: 0
+        settings:
+          CPU: x86
+    data:
+      first:
+        Standalone: OSXIntel
+      second:
+        enabled: 1
+        settings:
+          CPU: AnyCPU
+    data:
+      first:
+        Standalone: OSXIntel64
+      second:
+        enabled: 0
+        settings:
+          CPU: None
+    data:
+      first:
+        Standalone: OSXUniversal
+      second:
+        enabled: 0
+        settings:
+          CPU: x86
+    data:
+      first:
+        Standalone: Win
+      second:
+        enabled: 1
+        settings:
+          CPU: AnyCPU
+    data:
+      first:
+        Standalone: Win64
+      second:
+        enabled: 0
+        settings:
+          CPU: None
+    data:
+      first:
+        iPhone: iOS
+      second:
+        enabled: 0
+        settings:
+          CompileFlags: 
+          FrameworkDependencies: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 
