@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimeKeeperScript : MonoBehaviour {
@@ -28,9 +29,9 @@ public class TimeKeeperScript : MonoBehaviour {
 		platformGenerators = GameObject.Find("PlatformGenerators");
 		platformGeneratorArray = platformGenerators.GetComponentsInChildren<Transform>();
 		groundHeight = -4f;
-		levelTimeLimit = 10f;
-		timeUntilFade = 20f;
-		timeToFade = 5f;
+		levelTimeLimit = 20f;
+		timeUntilFade = 20f;//should be the same as shootingTime
+		timeToFade = 2f;//should load screen afterwards
 		fadeToBlack = GameObject.Find("FadeToBlack");
 		sr = fadeToBlack.GetComponent<SpriteRenderer>();
 		lerpAccumulation = 0f;
@@ -39,7 +40,7 @@ public class TimeKeeperScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate() {
 
-		#region Uncomment to pause on 1sec
+		#region Uncomment to pause on 2sec
 		//if (pause) {
 		//	if (Time.time == 2)
 		//	{
@@ -53,7 +54,11 @@ public class TimeKeeperScript : MonoBehaviour {
 
 
 		#region Level Setter
-		if (Time.timeSinceLevelLoad > (levelTimeLimit+ timeUntilFade)) {
+		if (Time.timeSinceLevelLoad > (levelTimeLimit + timeUntilFade + timeToFade)) {
+			SceneManager.LoadScene("MainMenu");
+		}
+		else if (Time.timeSinceLevelLoad > (levelTimeLimit + timeUntilFade))
+		{
 			Debug.Log("Fade");
 			lerpAccumulation += (Time.deltaTime / timeToFade);
 			fadeVar = Mathf.Lerp(fadeVar, 1f, lerpAccumulation);
@@ -61,7 +66,8 @@ public class TimeKeeperScript : MonoBehaviour {
 			//myText.text = "" + lerpAccumulation.ToString("0.00");
 			sr.color = new Color(0f, 0f, 0f, fadeVar);
 		}
-		else if (Time.timeSinceLevelLoad > levelTimeLimit) {
+		else if (Time.timeSinceLevelLoad > levelTimeLimit)
+		{
 			pgOff = true;
 			lastPlatformPosition = platformGeneratorArray[1].position;
 			lastPlatformPosition = new Vector3(

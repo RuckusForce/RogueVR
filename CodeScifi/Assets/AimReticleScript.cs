@@ -43,6 +43,7 @@ public class AimReticleScript : MonoBehaviour {
 			targetList.Remove(collision.gameObject);
 		}
 		else if (collision.gameObject.CompareTag("Shootable")) {
+			Debug.Log("Shootable has exited.");
 			targetList.Remove(collision.gameObject);
 		}
     }

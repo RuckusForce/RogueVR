@@ -1,9 +1,42 @@
 fileFormatVersion: 2
 guid: a3f1d6561da9d7a45828873343ba6283
-timeCreated: 1502083956
+timeCreated: 1504020876
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: portal03_test_front view01_0
+    21300002: portal03_test_front view01_1
+    21300004: portal03_test_front view01_2
+    21300006: portal03_test_front view01_3
+    21300008: portal03_test_front view01_4
+    21300010: portal03_test_front view01_5
+    21300012: portal03_test_front view01_6
+    21300014: portal03_test_front view01_7
+    21300016: portal03_test_front view01_8
+    21300018: portal03_test_front view01_9
+    21300020: portal03_test_front view01_10
+    21300022: portal03_test_front view01_11
+    21300024: portal03_test_front view01_12
+    21300026: portal03_test_front view01_13
+    21300028: portal03_test_front view01_14
+    21300030: portal03_test_front view01_15
+    21300032: portal03_test_front view01_16
+    21300034: portal03_test_front view01_17
+    21300036: portal03_test_front view01_18
+    21300038: portal03_test_front view01_19
+    21300040: portal03_test_front view01_20
+    21300042: portal03_test_front view01_21
+    21300044: portal03_test_front view01_22
+    21300046: portal03_test_front view01_23
+    21300048: portal03_test_front view01_24
+    21300050: portal03_test_front view01_25
+    21300052: portal03_test_front view01_26
+    21300054: portal03_test_front view01_27
+    21300056: portal03_test_front view01_28
+    21300058: portal03_test_front view01_29
+    21300060: portal03_test_front view01_30
+    21300062: portal03_test_front view01_31
+    21300064: portal03_test_front view01_32
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +67,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +91,72 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: portal03_test_front view01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1630
+        height: 2400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: portal03_test_front view01_1
+      rect:
+        serializedVersion: 2
+        x: 1913
+        y: 295
+        width: 964
+        height: 1796
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: portal03_test_front view01_2
+      rect:
+        serializedVersion: 2
+        x: 2982
+        y: 292
+        width: 947
+        height: 1799
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
