@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 /// <summary>
 /// If an enemy enters the trigger, then store and pass the location to the shooting script
 /// </summary>
@@ -10,11 +9,24 @@ public class AimReticleScript : MonoBehaviour {
 
     GameObject targetObject;
     public List<GameObject> targetList;
+	SpriteRenderer sr;
 
     void Awake()
     {
         targetList = new List<GameObject>();
+		sr = GetComponentInChildren<SpriteRenderer>();
     }
+
+	void Update() {
+		if (targetList.Count > 0)
+		{
+			sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
+		}
+		else {
+			sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .25f);
+		}
+	}
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 		//Debug.Log(collision.gameObject.name + " has entered.");

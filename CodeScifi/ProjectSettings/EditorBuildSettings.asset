@@ -11,6 +11,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RogueVR2.unity
     guid: 22cf89672507d464d8978a19b4e157f1
-  - enabled: 0
-    path: Assets/GAA/Scenes/VRReticle.unity
-    guid: e08a24130284bb84685a6577902ebc08

@@ -54,7 +54,7 @@ public class PlatformGenerator : MonoBehaviour {
 		thePlatform = Resources.Load("Prefabs/Platforms/Platform") as GameObject;
 		generationPoint = GameObject.Find("PlatformGenerationPoint").transform;//this is where this generator would reset to
 
-		obstacleTimeInterval = 3f;
+		obstacleTimeInterval = 5f;
 
 		platformSprite = thePlatform.GetComponent<SpriteRenderer>().sprite;
 		Camera main = FindObjectOfType<Camera>();

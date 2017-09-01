@@ -136,21 +136,21 @@ public class PlatformRemesher : MonoBehaviour
 		midMesh.gameObject.SetActive(true);
 		rightMesh.gameObject.SetActive(false);
 		isMidSection = true;
-		int rand = (int)Random.Range(0, 14);
+		//int rand = (int)Random.Range(0, 14);
 		//int rand = 2;
 		if (timeKeeper!=null && !(Time.timeSinceLevelLoad > timeKeeper.levelTimeLimit))
 		{
-			//if (Time.timeSinceLevelLoad > pg.obstacleTimeInterval)
-			//{
-			//	GameObject tempObstacle = pg.returnInactiveObstacle();
-			//	SpriteRenderer tempSr = tempObstacle.GetComponent<SpriteRenderer>();
-			//	tempObstacle.transform.position = new Vector3(
-			//	this.transform.position.x,
-			//	this.transform.position.y + (tempSr.sprite.rect.height / tempSr.sprite.pixelsPerUnit) / 2,
-			//	this.transform.position.z);
-			//	tempObstacle.SetActive(true);
-			//	pg.obstacleTimeInterval = pg.obstacleTimeInterval + Random.Range(3f, 6f);
-			//}
+			if (Time.timeSinceLevelLoad > pg.obstacleTimeInterval)
+			{
+				GameObject tempObstacle = pg.returnInactiveObstacle();
+				SpriteRenderer tempSr = tempObstacle.GetComponent<SpriteRenderer>();
+				tempObstacle.transform.position = new Vector3(
+				this.transform.position.x,
+				this.transform.position.y + (tempSr.sprite.rect.height / tempSr.sprite.pixelsPerUnit) / 2,
+				this.transform.position.z);
+				tempObstacle.SetActive(true);
+				pg.obstacleTimeInterval = pg.obstacleTimeInterval + Random.Range(3f, 6f);
+			}
 		}
 	}
 

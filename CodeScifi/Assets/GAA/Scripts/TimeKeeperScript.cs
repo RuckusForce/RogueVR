@@ -29,8 +29,8 @@ public class TimeKeeperScript : MonoBehaviour {
 		platformGenerators = GameObject.Find("PlatformGenerators");
 		platformGeneratorArray = platformGenerators.GetComponentsInChildren<Transform>();
 		groundHeight = -4f;
-		levelTimeLimit = 20f;
-		timeUntilFade = 20f;//should be the same as shootingTime
+		levelTimeLimit = 40f;
+		timeUntilFade = 18f;//should be the same as shootingTime
 		timeToFade = 2f;//should load screen afterwards
 		fadeToBlack = GameObject.Find("FadeToBlack");
 		sr = fadeToBlack.GetComponent<SpriteRenderer>();
