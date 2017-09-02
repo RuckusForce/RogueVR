@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: Idle
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: Bones/Torso
+    localPosition: {x: -0.031956673, y: -0.03564644, z: 0.021595478}
+    localRotation: {x: 0, y: 0, z: 0.70605016, w: 0.7081619}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/Neck
+    localPosition: {x: 0.69999796, y: 0.000003874302, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.088937856, w: 0.9960372}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/LeftArm
+    localPosition: {x: 0.6734071, y: -0.22609529, z: 0.029155731}
+    localRotation: {x: 0, y: -0, z: 0.9689468, w: -0.24726944}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/LeftArm/LeftForearm
+    localPosition: {x: 0.33999744, y: -0.0000035762787, z: 0}
+    localRotation: {x: 0, y: -0, z: 0.26841003, w: -0.96330476}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/RightArm
+    localPosition: {x: 0.6782717, y: 0.071665466, z: 0.03776169}
+    localRotation: {x: 0, y: 0, z: 0.9957215, w: 0.0924053}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Torso/RightArm/RightForearm
+    localPosition: {x: 0.36850297, y: 0.000000059604645, z: 0.0019569397}
+    localRotation: {x: 0, y: -0, z: 0.06286746, w: -0.9980219}
+    localScale: {x: 1, y: 1, z: 1}

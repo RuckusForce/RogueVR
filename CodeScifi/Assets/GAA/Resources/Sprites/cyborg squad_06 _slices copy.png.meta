@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0a2f05df3c6526d46a1695394c3b861a
-timeCreated: 1504062339
+timeCreated: 1504318327
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -37,6 +37,7 @@ TextureImporter:
     21300060: cyborg squad_06 _slices copy_31
     21300062: cyborg squad_06 _slices copy_32
     21300064: cyborg squad_06 _slices copy_33
+    21300066: cyborg squad_06 _slices copy_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -157,8 +158,47 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_3
+      rect:
+        serializedVersion: 2
+        x: 2531
+        y: 1831
+        width: 2481
+        height: 1285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_4
+      rect:
+        serializedVersion: 2
+        x: 3143
+        y: 1135
+        width: 1869
+        height: 696
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cyborg squad_06 _slices copy_5
+      rect:
+        serializedVersion: 2
+        x: 3143
+        y: 223
+        width: 1886
+        height: 907
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
-  userData: 98570271707134
+  userData: 98570273310201
   assetBundleName: 
   assetBundleVariant: 

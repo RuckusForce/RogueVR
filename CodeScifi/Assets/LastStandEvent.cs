@@ -16,11 +16,16 @@ public class LastStandEvent : MonoBehaviour {
 	float freeShootingTime;
 	Color tempColor;
 	float newTransparency;
-	float timeForLerping;
+	float lerpAccumulationCF;
+	float timeToFadeCF;
+	ParticleSystem particleSystem;
+	Animator cyborgAnimator;
 
 	void Awake() {
 		player = GameObject.Find("Hero2 (1)");
 		cyborgSoldier = GameObject.Find("CyborgSoldier");
+		particleSystem = GameObject.Find("CyborgParticleSystem").GetComponent<ParticleSystem>();
+		cyborgAnimator = cyborgSoldier.GetComponent<Animator>();
 		spriteMeshArray = cyborgSoldier.GetComponentsInChildren<SpriteMeshInstance>();
 		playerInputScript = player.GetComponentInChildren<PlayerInputScript>();
 		playerAnim = player.GetComponent<Animator>();
@@ -29,6 +34,8 @@ public class LastStandEvent : MonoBehaviour {
 		gotThroughOnce = false;
 		freeShootingTime = 10f;
 		cyborgFade = false;
+		timeToFadeCF = 200f;
+		newTransparency = 1f;
 	}
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag("Player")) {
@@ -49,8 +56,8 @@ public class LastStandEvent : MonoBehaviour {
 			for (int i = 0; i < spriteMeshArray.Length; i++)
 			{
 				tempColor = spriteMeshArray[i].color;
-				timeForLerping += (Time.deltaTime / 300f);
-				newTransparency = Mathf.Lerp(newTransparency, 0f, timeForLerping);
+				lerpAccumulationCF += (Time.deltaTime / timeToFadeCF);
+				newTransparency = Mathf.Lerp(newTransparency, 0f, lerpAccumulationCF);
 				spriteMeshArray[i].color = new Color(tempColor.r, tempColor.g, tempColor.b, newTransparency);
 			}
 		}
@@ -93,10 +100,12 @@ public class LastStandEvent : MonoBehaviour {
 
 	IEnumerator TimeForShooting() {
 		//yield return (playerInputScript.WalkTowards(this.transform.position));
+		cyborgAnimator.SetTrigger("Point");
 		yield return new WaitForSeconds(freeShootingTime);
-		Flip();
-		cyborgFade = true;
+		particleSystem.Play();
+		Flip();		
 		playerInputScript.UnfreezeInput();
+		cyborgFade = true;
 	}
 
 	void Continue() { 

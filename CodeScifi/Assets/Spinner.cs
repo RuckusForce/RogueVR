@@ -9,10 +9,14 @@ public class Spinner : MonoBehaviour {
 	float rotZ;
 
 	void Awake() {
-		rotX = Random.Range(3f, 7f);
-		rotY = Random.Range(3f, 7f);
-		rotZ = Random.Range(3f, 7f);
+		rotX = Random.Range(3f, 4f);
+		rotY = Random.Range(3f, 4f);
+		rotZ = Random.Range(3f, 4f);
 	}
+
+	//void NewFunction() { 
+	//	//what this newfunction does
+	//}
 
 	// Update is called once per frame
 	void Update () {

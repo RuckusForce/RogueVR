@@ -276,11 +276,12 @@ public class PlayerInputScript : MonoBehaviour {
 				anim.SetFloat("MoveX", automaticHorizontalMoveSpeed);
 				parent.transform.localScale = new Vector3(1f, 1f, 1f);//used for changing direction
 
-				#region Speed modifications per level
+				#region moveSpeed Variance per time passing
 				if (Time.timeSinceLevelLoad > levelTime)
 				{
 					levelTime = levelTime + 5f;
-					moveSpeed = moveSpeed + .4f;
+					//moveSpeed = moveSpeed + .4f;
+					
 				}
 				#endregion
 
