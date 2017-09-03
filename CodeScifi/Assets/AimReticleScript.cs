@@ -61,6 +61,7 @@ public class AimReticleScript : MonoBehaviour {
     }
 
     public bool HasTarget() {
+		Debug.Log("HasTarget()");
         if (targetList.Count > 0)
         {
             return true;

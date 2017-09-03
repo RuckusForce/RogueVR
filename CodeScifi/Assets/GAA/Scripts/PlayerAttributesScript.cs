@@ -15,6 +15,9 @@ public class PlayerAttributesScript : MonoBehaviour
 
     GameObject gameController;
     RetryGame retryGame;
+	bool dead;
+	PlayerInputScript playerInputScript;
+	Animator playerAnim;
 
     #region Health Variables
     [SerializeField]
@@ -63,7 +66,10 @@ public class PlayerAttributesScript : MonoBehaviour
 
         gameController = GameObject.Find("GameController");
 		retryGame = gameController.GetComponent<RetryGame>();
-	}
+		dead = false;
+		playerInputScript = GameObject.Find("PlayerInputObject").GetComponent<PlayerInputScript>();
+		playerAnim = GetComponentInParent<Animator>();
+		}
 
     void Start() {
         invincible = false;
@@ -91,12 +97,15 @@ public class PlayerAttributesScript : MonoBehaviour
 
     void FixedUpdate() {
         #region GameOver
-        if (this.GetCurrentHealth() <= 0)
+        if (this.GetCurrentHealth() <= 0 && dead==false)
         {
+			dead = true;
             //SceneManager.LoadScene("You Lose Screen");
             Debug.Log("You died.");
-            //retryGame.Retry();
-        }
+			retryGame.Retry();
+			playerInputScript.FreezeInput();
+			playerAnim.SetTrigger("Death");
+		}
         #endregion
     }
 

@@ -34,6 +34,8 @@ public class PlayerInputScript : MonoBehaviour {
 	public bool freezeHorizontalMovement;
 	bool freeze;
 
+	TextBoxManager textBoxManager;
+
 	void Awake() {
 
 		parent = transform.parent;
@@ -63,6 +65,8 @@ public class PlayerInputScript : MonoBehaviour {
 		jumpAudioSource = GetComponent<AudioSource>();
 
 		freeze = false;
+
+		textBoxManager = GameObject.Find("TextBoxManager").GetComponent<TextBoxManager>();
 	}
 
     // Update is called once per frame
@@ -105,9 +109,17 @@ public class PlayerInputScript : MonoBehaviour {
 
 			#endregion
 
-			#region Jump Controls [Deleted OVR SDK. Need to re-establish controls for Cardboard SDK instead.]
+			#region Click/Tap Controls (Next Text, Jump, and Resume from Pause) 
 			if (Input.GetMouseButtonDown(0))
 			{
+				#region Tap for Next Text - pulled from TextBoxManager.cs
+				if (textBoxManager.isActive) {
+					textBoxManager.currentLine += 1;
+					return;
+				}
+				#endregion
+
+				#region Tap to Jump - doesn't trigger if textBoxManager is Active
 				if (Time.timeScale == 1)
 				{
 					if (!dead)
@@ -127,10 +139,14 @@ public class PlayerInputScript : MonoBehaviour {
 						}
 					}
 				}
+				#endregion
+
+				#region Tap to Resume from Pause
 				else if (Time.timeScale == 0)
 				{
 					Time.timeScale = 1f;
 				}
+				#endregion
 
 			}
 			#endregion

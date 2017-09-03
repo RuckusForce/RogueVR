@@ -48,13 +48,15 @@ public class TextBoxManager : MonoBehaviour
         }
         else
         {
-            if(Input.GetKeyDown(KeyCode.Return))
-            {
-				//Debug.Log("TextBoxManager.Update(): Enter Key pressed");
-                currentLine += 1;
-            }
-        }
-        if (isActive)
+			#region Next Text moved to PlayerInputScript
+			//         if(Input.GetKeyDown(KeyCode.Return))
+			//         {
+			//	Debug.Log("TextBoxManager.Update(): Enter Key pressed");
+			//	currentLine += 1;
+			//}
+			#endregion
+		}
+		if (isActive)
         {
             EnableTextBox();
         }
