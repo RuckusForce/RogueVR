@@ -18,13 +18,16 @@ public class LastStandEvent : MonoBehaviour {
 	float newTransparency;
 	float lerpAccumulationCF;
 	float timeToFadeCF;
-	ParticleSystem particleSystem;
+	ParticleSystem particleSystemCyborg;
+	ParticleSystem particleSystemDroneDelivery;
 	Animator cyborgAnimator;
+	float pointAnimTime;
 
 	void Awake() {
 		player = GameObject.Find("Hero2 (1)");
 		cyborgSoldier = GameObject.Find("CyborgSoldier");
-		particleSystem = GameObject.Find("CyborgParticleSystem").GetComponent<ParticleSystem>();
+		particleSystemCyborg = GameObject.Find("CyborgParticleSystem").GetComponent<ParticleSystem>();
+		particleSystemDroneDelivery = GameObject.Find("DroneDeliverySystem").GetComponent<ParticleSystem>();
 		cyborgAnimator = cyborgSoldier.GetComponent<Animator>();
 		spriteMeshArray = cyborgSoldier.GetComponentsInChildren<SpriteMeshInstance>();
 		playerInputScript = player.GetComponentInChildren<PlayerInputScript>();
@@ -101,8 +104,10 @@ public class LastStandEvent : MonoBehaviour {
 	IEnumerator TimeForShooting() {
 		//yield return (playerInputScript.WalkTowards(this.transform.position));
 		cyborgAnimator.SetTrigger("Point");
+		yield return new WaitForSeconds(0.833f);//pointing anim length
+		particleSystemDroneDelivery.Play();
 		yield return new WaitForSeconds(freeShootingTime);
-		particleSystem.Play();
+		particleSystemCyborg.Play();
 		Flip();		
 		playerInputScript.UnfreezeInput();
 		cyborgFade = true;

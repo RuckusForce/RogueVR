@@ -6,6 +6,8 @@ public class Player : Character
 {
     private static Player instance;
 
+    public bool canMove;
+
     public static Player Instance
     {
         get
@@ -57,11 +59,18 @@ public class Player : Character
     void Update()
     {
         HandleInput();
+
     }
 
-	// Update is called once per frame
+	
+    
+    // Update is called once per frame
 	void FixedUpdate ()
     {
+        if (!canMove)
+        {
+            return;
+        }
         float horizontal = Input.GetAxis("Horizontal");
 
         OnGround = IsGrounded();
@@ -76,7 +85,8 @@ public class Player : Character
 
     private void HandleMovement(float horizontal)
     {
-        if(MyRigidbody.velocity.y < 0)
+        
+        if (MyRigidbody.velocity.y < 0)
         {
             MyAnimator.SetBool("land", true);
         }
