@@ -65,26 +65,27 @@ public class PlayerInputScript : MonoBehaviour {
 		jumpAudioSource = GetComponent<AudioSource>();
 
 		freeze = false;
+		if (SceneManager.GetActiveScene().buildIndex != 0) {
+			textBoxManager = GameObject.Find("TextBoxManager").GetComponent<TextBoxManager>();
+		}
 
-		textBoxManager = GameObject.Find("TextBoxManager").GetComponent<TextBoxManager>();
 	}
 
     // Update is called once per frame
     void Update()
     {
-		#region Falling Attributes
-		if (!attributes.grounded && !anim.GetBool("Falling"))
-		{
-			anim.SetBool("Falling", true);
-		}
-		else if (attributes.grounded)
-		{
-			anim.SetBool("Falling", false);
-		}
-		#endregion
+		if (SceneManager.GetActiveScene().buildIndex != 0) {//Don't allow these types of input in Scene 0 (Main Scene)
+			#region Falling Attributes
+			if (!attributes.grounded && !anim.GetBool("Falling"))
+			{
+				anim.SetBool("Falling", true);
+			}
+			else if (attributes.grounded)
+			{
+				anim.SetBool("Falling", false);
+			}
+			#endregion
 
-		if (!freeze)
-		{
 			#region Horizontal Movement Controls (Disabled)
 			//if (!dead)
 			//{
@@ -113,34 +114,37 @@ public class PlayerInputScript : MonoBehaviour {
 			if (Input.GetMouseButtonDown(0))
 			{
 				#region Tap for Next Text - pulled from TextBoxManager.cs
-				if (textBoxManager.isActive) {
+				if (textBoxManager.isActive)
+				{
 					textBoxManager.currentLine += 1;
 					return;
 				}
 				#endregion
 
-				#region Tap to Jump - doesn't trigger if textBoxManager is Active
-				if (Time.timeScale == 1)
+				if (!freeze)
 				{
-					if (!dead)
+					#region Tap to Jump - doesn't trigger if textBoxManager is Active
+					if (Time.timeScale == 1)
 					{
-						if (attributes.grounded)
+						if (!dead)
 						{
-							maxJumpCount = 2;//double jump capacity
-							maxJumpCount--;
-							rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
-							jumpAudioSource.Play();
-						}
-						else if (!attributes.grounded && maxJumpCount > 0)
-						{
-							maxJumpCount--;
-							rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
-							jumpAudioSource.Play();
+							if (attributes.grounded)
+							{
+								maxJumpCount = 2;//double jump capacity
+								maxJumpCount--;
+								rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+								jumpAudioSource.Play();
+							}
+							else if (!attributes.grounded && maxJumpCount > 0)
+							{
+								maxJumpCount--;
+								rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);//should change this to modify the character's horizontal movement
+								jumpAudioSource.Play();
+							}
 						}
 					}
+					#endregion
 				}
-				#endregion
-
 				#region Tap to Resume from Pause
 				else if (Time.timeScale == 0)
 				{
@@ -151,120 +155,92 @@ public class PlayerInputScript : MonoBehaviour {
 			}
 			#endregion
 
-			#region Sliding Controls (Disabled)		
-			//if (Input.GetKeyDown(KeyCode.DownArrow))
+			#region Attribute Controls (Disabled)
+			//if (Input.GetKeyDown(KeyCode.Y))
 			//{
-			//	if (!dead && attributes.grounded)
-			//	{
-			//		anim.SetTrigger("Sliding");
-			//		//anim.SetBool("Sliding",true);
-			//		attributes.sliding = true;
-			//	}
+			//	attributes.PlayerDecreaseHealth(10f);
 			//}
-			//else if (Input.GetKeyUp(KeyCode.DownArrow))
+			//if (Input.GetKeyDown(KeyCode.U))
 			//{
-			//	anim.SetTrigger("sliding");
-			//	//anim.SetBool("Sliding", false);
-			//	attributes.sliding = false;
+			//	attributes.PlayerRecoverHealth(10f);
+			//}
+
+			//if (Input.GetKeyDown(KeyCode.H))
+			//{
+			//	attributes.PlayerDecreaseShield(10f);
+			//}
+			//if (Input.GetKeyDown(KeyCode.J))
+			//{
+			//	attributes.PlayerRecoverShield(10f);
+			//}
+
+			//if (Input.GetKeyDown(KeyCode.N))
+			//{
+			//	attributes.PlayerDecreaseEnergy(10f);
+			//}
+			//if (Input.GetKeyDown(KeyCode.M))
+			//{
+			//	attributes.PlayerRecoverEnergy(10f);
+			//}
+
+			#endregion
+
+			#region Item Controls (Disabled)
+			//if (Input.GetKeyDown(KeyCode.Alpha1))
+			//{
+			//	inventory.UseItemFromSlot(0);
+			//}
+			//if (Input.GetKeyDown(KeyCode.Alpha2))
+			//{
+			//	inventory.UseItemFromSlot(1);
+			//}
+			//if (Input.GetKeyDown(KeyCode.Alpha3))
+			//{
+			//	inventory.UseItemFromSlot(2);
+			//}
+
+			//if (Input.GetKeyDown(KeyCode.Alpha4))
+			//{
+			//	inventory.AddItem(0);
+			//}
+			//if (Input.GetKeyDown(KeyCode.Alpha5))
+			//{
+			//	inventory.AddItem(1);
+			//}
+			//if (Input.GetKeyDown(KeyCode.Alpha6))
+			//{
+			//	inventory.AddItem(2);
+			//}
+			//if (Input.GetKeyDown(KeyCode.Alpha7))
+			//{
+			//	inventory.AddItem(3);
+			//}
+			//if (Input.GetKeyDown(KeyCode.Alpha8))
+			//{
+			//	inventory.AddItem(4);
 			//}
 			#endregion
 
-			#region Attribute Controls
-			if (Input.GetKeyDown(KeyCode.Y))
-			{
-				attributes.PlayerDecreaseHealth(10f);
-			}
-			if (Input.GetKeyDown(KeyCode.U))
-			{
-				attributes.PlayerRecoverHealth(10f);
-			}
-
-			if (Input.GetKeyDown(KeyCode.H))
-			{
-				attributes.PlayerDecreaseShield(10f);
-			}
-			if (Input.GetKeyDown(KeyCode.J))
-			{
-				attributes.PlayerRecoverShield(10f);
-			}
-
-			if (Input.GetKeyDown(KeyCode.N))
-			{
-				attributes.PlayerDecreaseEnergy(10f);
-			}
-			if (Input.GetKeyDown(KeyCode.M))
-			{
-				attributes.PlayerRecoverEnergy(10f);
-			}
-
+			#region Weapon Controls (Disabled)
+			//if (Input.GetKeyDown(KeyCode.R))
+			//{
+			//	inventory.CycleWeaponBackward();
+			//}
+			//if (Input.GetKeyDown(KeyCode.T))
+			//{
+			//	inventory.CycleWeaponForward();
+			//}
 			#endregion
 
-			#region Item Controls
-			if (Input.GetKeyDown(KeyCode.Alpha1))
+			#region [DEBUG] Restart with Esc Button
+			if (Input.GetKey(KeyCode.Escape))
 			{
-				inventory.UseItemFromSlot(0);
-			}
-			if (Input.GetKeyDown(KeyCode.Alpha2))
-			{
-				inventory.UseItemFromSlot(1);
-			}
-			if (Input.GetKeyDown(KeyCode.Alpha3))
-			{
-				inventory.UseItemFromSlot(2);
-			}
-
-			if (Input.GetKeyDown(KeyCode.Alpha4))
-			{
-				inventory.AddItem(0);
-			}
-			if (Input.GetKeyDown(KeyCode.Alpha5))
-			{
-				inventory.AddItem(1);
-			}
-			if (Input.GetKeyDown(KeyCode.Alpha6))
-			{
-				inventory.AddItem(2);
-			}
-			if (Input.GetKeyDown(KeyCode.Alpha7))
-			{
-				inventory.AddItem(3);
-			}
-			if (Input.GetKeyDown(KeyCode.Alpha8))
-			{
-				inventory.AddItem(4);
-			}
-			#endregion
-
-			#region Weapon Controls
-			if (Input.GetKeyDown(KeyCode.R))
-			{
-				inventory.CycleWeaponBackward();
-			}
-			if (Input.GetKeyDown(KeyCode.T))
-			{
-				inventory.CycleWeaponForward();
-			}
-			#endregion
-
-			#region Poses
-			if (!dead)
-			{
-				if (Input.GetKeyDown(KeyCode.UpArrow))
-				{
-					//anim.SetTrigger("Death");
-					//dead = true;
-				}
+				SceneManager.LoadScene("RogueVR2");
+				Time.timeScale = 1f;
 			}
 			#endregion
 		}
 
-		#region [DEBUG] Restart with Esc Button
-		if (Input.GetKey(KeyCode.Escape))
-		{
-			SceneManager.LoadScene("RogueVR2");
-			Time.timeScale = 1f;
-		}
-		#endregion
 	}
 
 	void FixedUpdate() {
@@ -319,10 +295,12 @@ public class PlayerInputScript : MonoBehaviour {
 	}
 
 	public void FreezeInput() {
+		Debug.Log("FreezeInput()");
 		freeze = true;
 	}
 
 	public void UnfreezeInput() {
+		Debug.Log("UnfreezeInput()");
 		freeze = false;
 	}
 

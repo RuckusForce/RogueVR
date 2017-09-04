@@ -10,41 +10,45 @@ public class ActivateTextLines : MonoBehaviour
     public int endLine;
 
     public TextBoxManager theTextBox;
+	public GameObject targetTextUI;//GAA: Set in Editor, should be inactive
 
     public bool destroyWhenActivated;
-    // Use this for initialization
-	void Start ()
+	bool activatedOnce;
+	public bool shouldEndWhenNoMoreLines;//GAA: Gives room for other events to finish and unfreeze the player
+
+	// Use this for initialization
+	void Awake ()
     {
         theTextBox = FindObjectOfType<TextBoxManager>();
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
+		activatedOnce = false;
 	}
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.name == "Player")
+		//Debug.Log("TextZone triggered by: " + other.tag);
+		if (other.CompareTag("Player") && !activatedOnce)
         {
-            theTextBox.ReloadScript(theText);
-            theTextBox.currentLine = startLine;
+			activatedOnce = true;
+			//theTextBox.LoadScript(theText);
+			theTextBox.StartText(targetTextUI, theText, startLine, endLine, shouldEndWhenNoMoreLines);//targetTextUI would be for later when we want to target other text boxes
+			#region Moved to TextBoxManager.StartText()
+			//theTextBox.currentLine = startLine;
+			//if (endLine!= 0)
+			//         {
+			//             theTextBox.endAtLine = endLine;
+			//         }
+			//         else
+			//         {
+			//             endLine = theTextBox.endAtLine;
+			//         }
 
-            if (endLine!= 0)
-            {
-                theTextBox.endAtLine = endLine;
-            }
-            else
-            {
-                endLine = theTextBox.endAtLine;
-            }
+			//         theTextBox.EnableTextBox();
+			#endregion
 
-            theTextBox.EnableTextBox();
-
-            if(destroyWhenActivated)
+			if (destroyWhenActivated)//the booleans are a bit ambiguous
             {
-                Destroy(gameObject);
+				//Destroy(gameObject);
+				//gameObject.SetActive(false);
             }
         }
     }

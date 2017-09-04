@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LastStandEvent : MonoBehaviour {
 	GameObject player;
@@ -23,6 +24,9 @@ public class LastStandEvent : MonoBehaviour {
 	Animator cyborgAnimator;
 	float pointAnimTime;
 
+
+	
+
 	void Awake() {
 		player = GameObject.Find("Hero2 (1)");
 		cyborgSoldier = GameObject.Find("CyborgSoldier");
@@ -35,11 +39,12 @@ public class LastStandEvent : MonoBehaviour {
 		lastBoss = GameObject.Find("BigBoss2");
 		startEvent = false;
 		gotThroughOnce = false;
-		freeShootingTime = 10f;
+		freeShootingTime = 7f;
 		cyborgFade = false;
 		timeToFadeCF = 200f;
 		newTransparency = 1f;
 	}
+
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag("Player")) {
 			Debug.Log("Player enters Last Stand");
@@ -51,10 +56,9 @@ public class LastStandEvent : MonoBehaviour {
 		if (startEvent) {
 			if (!gotThroughOnce) {
 				StartLastStand();//called multiple times if character is still falling
-			}
-			
+			}			
 		}
-
+		
 		if (cyborgFade) {		
 			for (int i = 0; i < spriteMeshArray.Length; i++)
 			{
@@ -64,6 +68,8 @@ public class LastStandEvent : MonoBehaviour {
 				spriteMeshArray[i].color = new Color(tempColor.r, tempColor.g, tempColor.b, newTransparency);
 			}
 		}
+		
+
 	}
 
 	void StartLastStand() {
@@ -79,12 +85,7 @@ public class LastStandEvent : MonoBehaviour {
 		}
 		playerInputScript.FreezeInput();
 		Flip();
-		//Stand();
-		//Crouch();
 		StartCoroutine(TimeForShooting());
-		//Stand();
-		//Continue();
-		//Fade();
 	}
 
 	void Flip() {
@@ -93,31 +94,17 @@ public class LastStandEvent : MonoBehaviour {
 		player.transform.Rotate(0f, 180f, 0f);
 	}
 
-	void Stand() { 
-	
-	}
-
-	void Crouch() { 
-	
-	}
-
 	IEnumerator TimeForShooting() {
-		//yield return (playerInputScript.WalkTowards(this.transform.position));
 		cyborgAnimator.SetTrigger("Point");
 		yield return new WaitForSeconds(0.833f);//pointing anim length
 		particleSystemDroneDelivery.Play();
 		yield return new WaitForSeconds(freeShootingTime);
 		particleSystemCyborg.Play();
-		Flip();		
+		Flip();
 		playerInputScript.UnfreezeInput();
 		cyborgFade = true;
+		//have to close the text here since we made it unable to close itself
 	}
 
-	void Continue() { 
-	
-	}
 
-	void Fade() { 
-		
-	}
 }

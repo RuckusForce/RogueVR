@@ -10,17 +10,18 @@ public class TimeKeeperScript : MonoBehaviour {
 	GameObject platformGenerators;
 	[SerializeField]
 	Transform[] platformGeneratorArray;
+	GameObject islandDeactivator;
 	GameObject level1C;
 	Vector3 lastPlatformPosition;
 	float groundHeight;
 	public float levelTimeLimit;
-	public float timeUntilFade;
-	public float timeToFade;
-	public float fadeVar;
-	GameObject fadeToBlack;
-	SpriteRenderer sr;
+	//public float timeUntilFade; // moved to LastStandEvent
+	//public float timeToFade;// moved to LastStandEvent
+	//public float fadeVar;// moved to LastStandEvent
+	//GameObject fadeToBlack;// moved to LastStandEvent
+	//SpriteRenderer sr;// moved to LastStandEvent	
+	//float lerpAccumulation;// moved to LastStandEvent
 	public bool pgOff = false;
-	float lerpAccumulation;
 
 	void Awake() {
 		myText = GetComponent<Text>();
@@ -28,13 +29,14 @@ public class TimeKeeperScript : MonoBehaviour {
 		level1C.SetActive(false);
 		platformGenerators = GameObject.Find("PlatformGenerators");
 		platformGeneratorArray = platformGenerators.GetComponentsInChildren<Transform>();
+		islandDeactivator = GameObject.Find("IslandDeactivator");
 		groundHeight = -4f;
-		levelTimeLimit = 5f;
-		timeUntilFade = 21f;//should be the same as shootingTime
-		timeToFade = 2f;//should load screen afterwards
-		fadeToBlack = GameObject.Find("FadeToBlack");
-		sr = fadeToBlack.GetComponent<SpriteRenderer>();
-		lerpAccumulation = 0f;
+		levelTimeLimit = 10f;
+		//timeUntilFade = 21f;//should be the same as shootingTime
+		//timeToFade = 2f;//should load screen afterwards
+		//fadeToBlack = GameObject.Find("FadeToBlack");
+		//sr = fadeToBlack.GetComponent<SpriteRenderer>();
+		//lerpAccumulation = 0f;
 	}
 
 	// Update is called once per frame
@@ -49,23 +51,26 @@ public class TimeKeeperScript : MonoBehaviour {
 		#endregion
 		//myText.text = "" + Time.timeSinceLevelLoad.ToString("0.00");
 		//myText.text = "" + Time.deltaTime.ToString("0.00");
-		//Need to figure out fading to black
-
 
 		#region Level Setter
-		if (Time.timeSinceLevelLoad > (levelTimeLimit + timeUntilFade + timeToFade)) {
-			SceneManager.LoadScene("MainMenu");
-		}
-		else if (Time.timeSinceLevelLoad > (levelTimeLimit + timeUntilFade))
-		{
-			Debug.Log("Fade");
-			lerpAccumulation += (Time.deltaTime / timeToFade);
-			fadeVar = Mathf.Lerp(fadeVar, 1f, lerpAccumulation);
-			myText.text = "" + fadeVar.ToString("0.00");
-			//myText.text = "" + lerpAccumulation.ToString("0.00");
-			sr.color = new Color(0f, 0f, 0f, fadeVar);
-		}
-		else if (Time.timeSinceLevelLoad > levelTimeLimit)
+
+			#region Placed these events in LastStandEvent
+			//if (Time.timeSinceLevelLoad > (levelTimeLimit + timeUntilFade + timeToFade)) {//should happen after the scene turns black
+			//	SceneManager.LoadScene("MainMenu");
+			//}
+			//else if (Time.timeSinceLevelLoad > (levelTimeLimit + timeUntilFade))//Should be triggered by passing through the portal
+			//{
+			//	Debug.Log("Fade");
+			//	lerpAccumulation += (Time.deltaTime / timeToFade);
+			//	fadeVar = Mathf.Lerp(fadeVar, 1f, lerpAccumulation);
+			//	myText.text = "" + fadeVar.ToString("0.00");
+			//	//myText.text = "" + lerpAccumulation.ToString("0.00");
+			//	sr.color = new Color(0f, 0f, 0f, fadeVar);
+			//}
+			//else
+			#endregion
+
+		if (Time.timeSinceLevelLoad > levelTimeLimit)//loads Level1C
 		{
 			pgOff = true;
 			lastPlatformPosition = platformGeneratorArray[1].position;
@@ -83,6 +88,7 @@ public class TimeKeeperScript : MonoBehaviour {
 	}
 
 	public void TurnOffPlatformGenerators() {
+		islandDeactivator.SetActive(false);
 		for (int i = 0; i < platformGeneratorArray.Length; i++) {
 			platformGeneratorArray[i].gameObject.SetActive(false);
 		}
