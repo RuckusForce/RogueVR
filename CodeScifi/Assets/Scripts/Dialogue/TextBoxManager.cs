@@ -99,10 +99,11 @@ public class TextBoxManager : MonoBehaviour
 		playerInputScript.UnfreezeInput();
     }
 
-    public void LoadScript(TextAsset theText)
+    public void ReloadScript(TextAsset theText)
     {
         if(theText != null)
         {
+			Debug.Log("theText is not null");
 			//textLines = new string[1];
 			//textLines = theText.text.Split('n');
 			textLines = textfile.text.Split('\n');
@@ -112,7 +113,8 @@ public class TextBoxManager : MonoBehaviour
 	public void StartText(GameObject newTextBox, TextAsset theText, int start, int end, bool shouldEndWhenNoMoreLines) {
 		if (theText != null) {			
 			endWithNoMoreLines = shouldEndWhenNoMoreLines;//allows other events to unfreeze the player
-			LoadScript(theText);
+			//ReloadScript(theText);
+			textLines = theText.text.Split('\n');
 			textBox = newTextBox;//not functional yet, keep newTextBox as the original textbox
 			currentLine = start;
 			endAtLine = end;
