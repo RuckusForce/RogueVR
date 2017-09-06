@@ -23,13 +23,16 @@ public class AimReticleScript : MonoBehaviour {
     }
 
 	void Update() {
-		if (targetList.Count > 0)
+		//if (targetList.Count > 0)
+		if(targets.Count>0)
 		{
 			sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
 		}
 		else {
 			sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .25f);
 		}
+
+		
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)

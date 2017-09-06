@@ -28,7 +28,7 @@ public class RetryGame : MonoBehaviour
 
 			//turn down volume, should reset on level reload
 			bgMusic = GameObject.Find("PlayerCamera").GetComponent<AudioSource>();
-			bgMusic.volume = .5f;
+			bgMusic.volume = .2f;
 
 			//PlayerPrefs.SetFloat("High Score", 0f);
 			rCanvas.gameObject.SetActive(true);
