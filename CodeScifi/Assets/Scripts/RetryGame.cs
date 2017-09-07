@@ -14,6 +14,14 @@ public class RetryGame : MonoBehaviour
 		playerInputScript = GameObject.Find("Hero2 (1)").GetComponentInChildren<PlayerInputScript>();
 	}
 
+	void Update() {
+		transform.position = new Vector3
+		(transform.position.x,
+		2f,
+		transform.position.z);
+
+	}
+
     //Retry pop up and Retry button should be two different methods
     public void Retry()
     {

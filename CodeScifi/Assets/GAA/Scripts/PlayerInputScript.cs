@@ -146,7 +146,8 @@ public class PlayerInputScript : MonoBehaviour {
 					#endregion
 				}
 				#region Tap to Resume from Pause
-				else if (Time.timeScale == 0)
+				
+				if (Time.timeScale == 0)
 				{
 					Time.timeScale = 1f;
 				}

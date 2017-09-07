@@ -46,6 +46,7 @@ public class MachineGun : MonoBehaviour
 			Rigidbody2D rb = temp.GetComponent<Rigidbody2D>();
 			Vector3 targetCoordinates = aimReticleScript.ReturnFirstCoordinates();
 			Vector3 bulletDirection = targetCoordinates - transform.position;
+			transform.LookAt(aimReticleScript.transform);
 			//rb.velocity = transform.right * 40;//let's direct the rb towards the enemy
 			//rb.AddForceAtPosition(transform.forward * 100, -aimReticleScript.ReturnFirstCoordinates());
 			//rb.MovePosition(aimReticleScript.ReturnFirstCoordinates());
