@@ -13,6 +13,6 @@ public class EndGame : MonoBehaviour {
 
 	public void EndThisGame()
 	{
-		SceneManager.LoadScene("MainMenu");
+		SceneManager.LoadScene("CreditsScene");
 	}
 }

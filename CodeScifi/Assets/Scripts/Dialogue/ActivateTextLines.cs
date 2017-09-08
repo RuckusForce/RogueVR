@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActivateTextLines : MonoBehaviour
 {
-    public TextAsset theText;
+    public TextAsset theTextAsset;
 
     public int startLine;
     public int endLine;
@@ -30,7 +30,7 @@ public class ActivateTextLines : MonoBehaviour
         {
 			activatedOnce = true;
 			//theTextBox.LoadScript(theText);
-			theTextBox.StartText(targetTextUI, theText, startLine, endLine, shouldEndWhenNoMoreLines);//targetTextUI would be for later when we want to target other text boxes
+			theTextBox.StartText(targetTextUI, theTextAsset, startLine, endLine, shouldEndWhenNoMoreLines);//targetTextUI would be for later when we want to target other text boxes
 			#region Moved to TextBoxManager.StartText()
 			//theTextBox.currentLine = startLine;
 			//if (endLine!= 0)

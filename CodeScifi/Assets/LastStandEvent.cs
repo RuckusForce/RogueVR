@@ -23,7 +23,8 @@ public class LastStandEvent : MonoBehaviour {
 	ParticleSystem particleSystemDroneDelivery;
 	Animator cyborgAnimator;
 	float pointAnimTime;
-
+	ActivateTextLines activateTextLines;
+	public GameObject droneDialogText;
 
 	
 
@@ -43,6 +44,8 @@ public class LastStandEvent : MonoBehaviour {
 		cyborgFade = false;
 		timeToFadeCF = 200f;
 		newTransparency = 1f;
+		activateTextLines = GetComponent<ActivateTextLines>();
+		droneDialogText = activateTextLines.targetTextUI;
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -84,14 +87,15 @@ public class LastStandEvent : MonoBehaviour {
 			Debug.Log("gotThroughOnce = true");
 		}
 		playerInputScript.FreezeInput();
+		lastBoss.transform.SetParent(this.transform);
 		Flip();
 		StartCoroutine(TimeForShooting());
 	}
 
 	void Flip() {
-		Debug.Log("Flip()");
-		lastBoss.transform.SetParent(this.transform);
+		Debug.Log("Flip()");		
 		player.transform.Rotate(0f, 180f, 0f);
+		droneDialogText.transform.Rotate(0, 180f, 0f);//should cancel out player rotation for text
 	}
 
 	IEnumerator TimeForShooting() {
@@ -104,6 +108,7 @@ public class LastStandEvent : MonoBehaviour {
 		playerInputScript.UnfreezeInput();
 		cyborgFade = true;
 		//have to close the text here since we made it unable to close itself
+		droneDialogText.SetActive(false);
 	}
 
 

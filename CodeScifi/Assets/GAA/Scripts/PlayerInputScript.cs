@@ -65,10 +65,9 @@ public class PlayerInputScript : MonoBehaviour {
 		jumpAudioSource = GetComponent<AudioSource>();
 
 		freeze = false;
-		if (SceneManager.GetActiveScene().buildIndex != 0) {
+		if (SceneManager.GetActiveScene().buildIndex == 1) {
 			textBoxManager = GameObject.Find("TextBoxManager").GetComponent<TextBoxManager>();
 		}
-
 	}
 
     // Update is called once per frame

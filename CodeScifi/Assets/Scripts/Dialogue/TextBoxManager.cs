@@ -6,9 +6,7 @@ using UnityEngine;
 public class TextBoxManager : MonoBehaviour
 {
     public GameObject textBox;//GAA: Will now be set by the ActivateTextLines script
-
-    public Text theText;
-
+	public Text textUI;
 	public TextAsset textfile;
     public string[] textLines;
 
@@ -42,13 +40,15 @@ public class TextBoxManager : MonoBehaviour
 
     void Update()
     {
-        theText.text = textLines[currentLine];
+		if (currentLine <= endAtLine) {
+			textUI.text = textLines[currentLine];
+		}
 
-        if(currentLine > endAtLine && !noMoreLines)
+		else if (currentLine > endAtLine && !noMoreLines)
         {
 			//textBox.SetActive(false);
 			noMoreLines = true;
-			if (endWithNoMoreLines) {
+			if (endWithNoMoreLines) {//doesn't function well with other events
 				DisableTextBox();
 			}
 
@@ -103,19 +103,20 @@ public class TextBoxManager : MonoBehaviour
     {
         if(theText != null)
         {
-			Debug.Log("theText is not null");
+			Debug.Log("textUI is not null");
 			//textLines = new string[1];
 			//textLines = theText.text.Split('n');
 			textLines = textfile.text.Split('\n');
 		}
     }
 
-	public void StartText(GameObject newTextBox, TextAsset theText, int start, int end, bool shouldEndWhenNoMoreLines) {
-		if (theText != null) {			
+	public void StartText(GameObject newTextBox, TextAsset textAsset, int start, int end, bool shouldEndWhenNoMoreLines) {
+		if (textAsset != null) {			
 			endWithNoMoreLines = shouldEndWhenNoMoreLines;//allows other events to unfreeze the player
 			//ReloadScript(theText);
-			textLines = theText.text.Split('\n');
-			textBox = newTextBox;//not functional yet, keep newTextBox as the original textbox
+			textLines = textAsset.text.Split('\n');
+			textBox = newTextBox;
+			textUI = textBox.GetComponent<Text>();
 			currentLine = start;
 			endAtLine = end;
 			EnableTextBox();
