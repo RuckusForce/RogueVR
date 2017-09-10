@@ -17,7 +17,7 @@ public class RetryGame : MonoBehaviour
 	void Update() {
 		transform.position = new Vector3
 		(transform.position.x,
-		2f,
+		0f,
 		transform.position.z);
 
 	}

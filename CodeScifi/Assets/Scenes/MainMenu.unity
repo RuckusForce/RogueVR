@@ -1206,6 +1206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 318069554}
   - component: {fileID: 318069555}
+  - component: {fileID: 318069556}
   m_Layer: 0
   m_Name: CanvasCursorSprite
   m_TagString: Untagged
@@ -1268,6 +1269,17 @@ SpriteRenderer:
   m_Size: {x: 18.17, y: 17.87}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+--- !u!114 &318069556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318069553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e1d156d7fe13146a0b7e7734dcb45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &318468963
 GameObject:
   m_ObjectHideFlags: 0
@@ -5248,6 +5260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2002314464}
   - component: {fileID: 2002314465}
+  - component: {fileID: 2002314466}
   m_Layer: 0
   m_Name: CanvasCursorSprite (1)
   m_TagString: Untagged
@@ -5310,6 +5323,17 @@ SpriteRenderer:
   m_Size: {x: 18.17, y: 17.87}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+--- !u!114 &2002314466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2002314463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e1d156d7fe13146a0b7e7734dcb45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2009599592
 GameObject:
   m_ObjectHideFlags: 0

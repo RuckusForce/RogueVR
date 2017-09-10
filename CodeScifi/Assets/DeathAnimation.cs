@@ -8,11 +8,12 @@ public class DeathAnimation : MonoBehaviour {
 	Collider2D[] cols;
 	Enemy enemyScript;
 	bool dying;
+	ParticleSystem ps;
 
 	void Awake() {
 		anim = GetComponent<Animator>();
 		cols = GetComponentsInChildren<Collider2D>();
-
+		ps = GetComponent<ParticleSystem>();
 		enemyScript = GetComponent<Enemy>();
 		dying = false;
 		TurnOnColliders();
@@ -42,6 +43,16 @@ public class DeathAnimation : MonoBehaviour {
 	public IEnumerator Die() {
 		dying = true;
 		TurnOffColliders();
+
+		//if (!ps.IsAlive())
+		//{
+		//	//Debug.Log("PS: " + i + " is Active.");
+		//	ps.transform.position = this.transform.position;
+		//	ps.Clear();
+		//	ps.GetComponent<ParticleSystem>().Simulate(GetComponent<ParticleSystem>().main.duration);
+		//	ps.GetComponent<ParticleSystem>().Play();
+		//}
+
 		anim.SetTrigger("Died");
 
 		//enemyScript.enabled = false;

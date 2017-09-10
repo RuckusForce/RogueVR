@@ -273,10 +273,10 @@ public class PlayerInputScript : MonoBehaviour {
 				{
 					levelTime = levelTime + 5f;
 					//moveSpeed = moveSpeed + .4f;
-					
+
 				}
 				#endregion
-
+				
 				movement = new Vector2(automaticHorizontalMoveSpeed * moveSpeed, rb.velocity.y);
 				if (!freezeHorizontalMovement)
 				{//toggle movement in editor
@@ -285,7 +285,9 @@ public class PlayerInputScript : MonoBehaviour {
 					//above now works. Animator needed to have Apply Root Motion, Normal Update Mode, Cull Completely Culling Mode
 					//also had a simulated dynamic rigidbody2d
 				}
-
+			}
+			else {
+				
 			}
 			#endregion
 		}
@@ -297,11 +299,14 @@ public class PlayerInputScript : MonoBehaviour {
 	public void FreezeInput() {
 		Debug.Log("FreezeInput()");
 		freeze = true;
+		rb.constraints = RigidbodyConstraints2D.FreezeAll;
 	}
 
 	public void UnfreezeInput() {
 		Debug.Log("UnfreezeInput()");
 		freeze = false;
+		rb.constraints = RigidbodyConstraints2D.None;
+		rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
 
 	public bool WalkTowards(Vector3 target) {
