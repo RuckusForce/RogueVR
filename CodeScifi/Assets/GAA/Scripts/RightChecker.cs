@@ -17,7 +17,7 @@ public class RightChecker : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		//Debug.Log(other.gameObject.name + " has entered");
-		if (other.gameObject.CompareTag("Ground")) {
+		if (!pr.situated && other.gameObject.CompareTag("Ground")) {
 			pr.HasRight();
 			if (pr.hasLeft && pr.hasRight)
 			{
@@ -31,10 +31,10 @@ public class RightChecker : MonoBehaviour {
 			{//only has left
 				pr.ChangeToRightEdge();
 			}
-			else if (!pr.hasLeft && !pr.hasRight)
-			{
-				//island
-			}
+			//else if (!pr.hasLeft && !pr.hasRight)
+			//{
+			//	//island
+			//}
 		}
 	}
 }

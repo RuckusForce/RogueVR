@@ -15,6 +15,7 @@ public class CameraFollow : MonoBehaviour {
 	float offsetX;
 	float offsetY;
 	float offsetZ;
+	
 
 	// Use this for initialization
 	void Awake () {

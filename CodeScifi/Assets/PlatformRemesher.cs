@@ -39,6 +39,8 @@ public class PlatformRemesher : MonoBehaviour
 	PlatformGenerator pg;
 	[SerializeField] TimeKeeperScript timeKeeper;
 
+	public bool situated;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -92,11 +94,13 @@ public class PlatformRemesher : MonoBehaviour
 	public void HasLeft()
 	{
 		hasLeft = true;
+		situated = true;
 	}
 
 	public void HasRight()
 	{
 		hasRight = true;
+		situated = true;
 	}
 
 	public void ResetChildren()
@@ -106,6 +110,7 @@ public class PlatformRemesher : MonoBehaviour
 		isLeftEdge = false;
 		isRightEdge = false;
 		isMidSection = false;
+		situated = false;
 	}
 
 	public void ChangeToLeftEdge()

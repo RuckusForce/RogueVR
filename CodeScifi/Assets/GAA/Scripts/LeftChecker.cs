@@ -17,10 +17,10 @@ public class LeftChecker : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		//Debug.Log(other.gameObject.name + " has entered");
-		if (other.gameObject.CompareTag("Ground"))
+		if (!pr.situated && other.gameObject.CompareTag("Ground"))
 		{
 			//Debug.Log("Ground enter");
-			pr.HasLeft();
+			pr.HasLeft();//what's this for?
 			if (pr.hasLeft && pr.hasRight)
 			{
 				pr.ChangeToMidSection();

@@ -12,10 +12,13 @@ public class MachineGun : MonoBehaviour
 
 	AimReticleScript aimReticleScript;
 
+	AudioSource audioSource;
+
 	private void Awake()
     {
         rBodyRef = rBullet.GetComponent<Rigidbody>();
 		aimReticleScript = GameObject.Find("CanvasCursor").GetComponent<AimReticleScript>();
+		audioSource = GetComponent<AudioSource>();
 	} 
 
 
@@ -42,6 +45,8 @@ public class MachineGun : MonoBehaviour
 		{
 			Debug.Log("PewPewAuto");
 			nextFire = Time.time + fireRate;
+			audioSource.Stop();
+			audioSource.Play();
 			GameObject temp = Instantiate(rBullet, transform.position, transform.rotation);
 			Rigidbody2D rb = temp.GetComponent<Rigidbody2D>();
 			Vector3 targetCoordinates = aimReticleScript.ReturnFirstCoordinates();
