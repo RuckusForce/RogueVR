@@ -9,6 +9,7 @@ public class DeathAnimation : MonoBehaviour {
 	Enemy enemyScript;
 	bool dying;
 	ParticleSystem ps;
+	PlayerAttributesScript playerAttributes;
 
 	void Awake() {
 		anim = GetComponent<Animator>();
@@ -16,6 +17,7 @@ public class DeathAnimation : MonoBehaviour {
 		ps = GetComponent<ParticleSystem>();
 		enemyScript = GetComponent<Enemy>();
 		dying = false;
+		playerAttributes = GameObject.Find("Hero2 (1)").GetComponentInChildren<PlayerAttributesScript>();
 		TurnOnColliders();
 	}
 	
@@ -34,7 +36,9 @@ public class DeathAnimation : MonoBehaviour {
 			else if (other.gameObject.CompareTag("Player"))
 			{
 				Debug.Log("OnTriggerEnter: Enemy DeathAnimation PlayerCollision");
+				playerAttributes.PlayerDecreaseHealth(100f);
 				StartCoroutine(Die());
+
 			}
 		}
 

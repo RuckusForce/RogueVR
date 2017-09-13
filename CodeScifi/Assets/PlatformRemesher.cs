@@ -94,13 +94,13 @@ public class PlatformRemesher : MonoBehaviour
 	public void HasLeft()
 	{
 		hasLeft = true;
-		situated = true;
+		//situated = true;
 	}
 
 	public void HasRight()
 	{
 		hasRight = true;
-		situated = true;
+		//situated = true;
 	}
 
 	public void ResetChildren()
@@ -110,7 +110,7 @@ public class PlatformRemesher : MonoBehaviour
 		isLeftEdge = false;
 		isRightEdge = false;
 		isMidSection = false;
-		situated = false;
+		//situated = false;
 	}
 
 	public void ChangeToLeftEdge()

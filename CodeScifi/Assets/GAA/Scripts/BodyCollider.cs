@@ -11,8 +11,8 @@ public class BodyCollider : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        //Debug.Log("Body collided with: " + other.gameObject.tag);
-        if (other.gameObject.CompareTag("Enemy")||other.gameObject.CompareTag("Obstacle")) {
+		Debug.Log("Body collided with: " + other.gameObject.tag);
+		if (other.gameObject.CompareTag("Enemy")||other.gameObject.CompareTag("Obstacle")) {
             ps.PlayerDecreaseHealth(100f);
         }
     }
