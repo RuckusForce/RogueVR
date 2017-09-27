@@ -66,7 +66,7 @@ public class PlatformDeactivator : MonoBehaviour {
 	}
 
 	void TriggerDust(Vector3 position) {
-		Debug.Log("TriggerDust()");
+		//Debug.Log("TriggerDust()");
 		//if (!ps1.IsAlive())
 		//{
 		//	dt1.transform.position = position;

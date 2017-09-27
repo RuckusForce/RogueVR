@@ -5,13 +5,16 @@ using UnityEngine;
 public class DeathAnimation : MonoBehaviour {
 
 	Animator anim;
-	Collider2D[] cols;
+	public Collider2D[] cols;
 	Enemy enemyScript;
 	bool dying;
 	ParticleSystem ps;
 	PlayerAttributesScript playerAttributes;
+	Rigidbody2D rb;
+	ShootableArea shootableScript;
 
 	void Awake() {
+
 		anim = GetComponent<Animator>();
 		cols = GetComponentsInChildren<Collider2D>();
 		ps = GetComponent<ParticleSystem>();
@@ -19,6 +22,9 @@ public class DeathAnimation : MonoBehaviour {
 		dying = false;
 		playerAttributes = GameObject.Find("Hero2 (1)").GetComponentInChildren<PlayerAttributesScript>();
 		TurnOnColliders();
+		rb = GetComponent<Rigidbody2D>();
+		rb.velocity = Vector2.zero;
+		shootableScript = GetComponentInChildren<ShootableArea>();
 	}
 	
 	// Update is called once per frame
@@ -26,11 +32,17 @@ public class DeathAnimation : MonoBehaviour {
 		
 	}
 
+	void OnDisable() {
+		transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+		dying = false;
+		
+	}
+
 	void OnTriggerEnter2D(Collider2D other) {
 		if (!dying) {
 			if (other.gameObject.CompareTag("Bullet"))
 			{
-				Debug.Log("OnTriggerEnter: Enemy DeathAnimation");
+				//Debug.Log("OnTriggerEnter: Enemy DeathAnimation");
 				StartCoroutine(Die());
 			}
 			else if (other.gameObject.CompareTag("Player"))
@@ -46,7 +58,9 @@ public class DeathAnimation : MonoBehaviour {
 
 	public IEnumerator Die() {
 		dying = true;
-		TurnOffColliders();
+		//TurnOffColliders();
+		shootableScript.RemoveFromReticleList();
+		StartCoroutine(TurnOffCollidersTemporarily());
 
 		//if (!ps.IsAlive())
 		//{
@@ -72,11 +86,24 @@ public class DeathAnimation : MonoBehaviour {
 		}
 	}
 
-	void TurnOnColliders() {
+	IEnumerator TurnOffCollidersTemporarily() {
+		for (int i = 0; i < cols.Length; i++)
+		{
+			cols[i].enabled = false;
+		}
+		yield return new WaitForSeconds(2f);
 		for (int i = 0; i < cols.Length; i++)
 		{
 			cols[i].enabled = true;
-		}
+		}		
 	}
 
+
+	void TurnOnColliders() {//does not work
+		for (int i = 0; i < cols.Length; i++)
+		{
+			//Debug.Log(cols[i].gameObject.name + " enabled.");
+			cols[i].enabled = true;
+		}
+	}
 }

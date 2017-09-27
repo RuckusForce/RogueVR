@@ -43,7 +43,7 @@ public class MachineGun : MonoBehaviour
 	public void PewPewAuto() {
 		if (aimReticleScript.HasTarget() && Time.time > nextFire)
 		{
-			Debug.Log("PewPewAuto");
+			//Debug.Log("PewPewAuto");
 			nextFire = Time.time + fireRate;
 			audioSource.Stop();
 			audioSource.Play();

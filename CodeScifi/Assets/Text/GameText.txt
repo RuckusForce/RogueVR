@@ -1,6 +1,8 @@
 Gizmo: Hey! Use the [Headset Button] to tell Ally to jump.
 Gizmo: I'm Gizmo by the way. 
 Gizmo: Look at the enemies to aim. Let me handle the rest.
+Gizmo: Oh, you can also look down to pause.
+Gizmo: Just press the [Headset Button] on the playing field to resume.
 -----------------------------
 Gizmo: You arrived just in time!  
 Gizmo: He's all yours!

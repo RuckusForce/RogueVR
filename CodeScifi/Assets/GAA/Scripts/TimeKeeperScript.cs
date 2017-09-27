@@ -31,7 +31,7 @@ public class TimeKeeperScript : MonoBehaviour {
 		platformGeneratorArray = platformGenerators.GetComponentsInChildren<Transform>();
 		islandDeactivator = GameObject.Find("IslandDeactivator");
 		groundHeight = -4f;
-		levelTimeLimit = 25f;
+		levelTimeLimit = 30f;
 		//timeUntilFade = 21f;//should be the same as shootingTime
 		//timeToFade = 2f;//should load screen afterwards
 		//fadeToBlack = GameObject.Find("FadeToBlack");

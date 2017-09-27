@@ -297,13 +297,13 @@ public class PlayerInputScript : MonoBehaviour {
 	}
 
 	public void FreezeInput() {
-		Debug.Log("FreezeInput()");
+		//Debug.Log("FreezeInput()");
 		freeze = true;
 		rb.constraints = RigidbodyConstraints2D.FreezeAll;
 	}
 
 	public void UnfreezeInput() {
-		Debug.Log("UnfreezeInput()");
+		//Debug.Log("UnfreezeInput()");
 		freeze = false;
 		rb.constraints = RigidbodyConstraints2D.None;
 		rb.constraints = RigidbodyConstraints2D.FreezeRotation;

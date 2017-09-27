@@ -30,7 +30,7 @@ public class RetryGame : MonoBehaviour
         {			
 			if (Time.timeSinceLevelLoad > PlayerPrefs.GetFloat("High Score"))
 			{
-				Debug.Log(Time.timeSinceLevelLoad + " > " + PlayerPrefs.GetFloat("High Score"));
+				//Debug.Log(Time.timeSinceLevelLoad + " > " + PlayerPrefs.GetFloat("High Score"));
 				PlayerPrefs.SetFloat("High Score", Time.timeSinceLevelLoad);
 			}
 

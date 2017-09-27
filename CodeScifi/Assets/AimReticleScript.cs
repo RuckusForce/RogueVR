@@ -80,12 +80,14 @@ public class AimReticleScript : MonoBehaviour {
     {
 		if (collision.gameObject.CompareTag("Enemy"))//should we empty the entire list instead of one by one?
 		{
-			targetList.Remove(collision.gameObject);
-			targets.Remove(collision.gameObject);
+			RemoveTheTarget(collision.gameObject);
+			//targetList.Remove(collision.gameObject);
+			//targets.Remove(collision.gameObject);
 		}
 		else if (collision.gameObject.CompareTag("Shootable")) {
-			targetList.Remove(collision.gameObject);
-			targets.Remove(collision.gameObject);
+			RemoveTheTarget(collision.gameObject);
+			//targetList.Remove(collision.gameObject);
+			//targets.Remove(collision.gameObject);
 		}
     }
 
@@ -98,14 +100,36 @@ public class AimReticleScript : MonoBehaviour {
 		//else {
 		//    return false;
 		//}
-		if (targets.Count > 0)
+		if (targets != null)
+		{
+			if (targets.Count > 0)
+			{
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+		
+    }
+
+	public bool ContainsTheTarget(GameObject target) {
+		if (targets.ContainsKey(target))
 		{
 			return true;
 		}
 		else {
 			return false;
-		}
-    }
+		}		
+	}
+
+	public void RemoveTheTarget(GameObject target) {
+		targetList.Remove(target);
+		targets.Remove(target);
+	}
 
     public Vector3 ReturnFirstCoordinates()
     {
